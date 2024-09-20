@@ -1,6 +1,9 @@
+import Sidebar from "../components/Sidebar/sidebar";
 
 export default function Home() {
   return (
-    <h1>HELLO</h1>
+    <div className=" m-10">
+      <Sidebar/>
+    </div>
   );
 }
