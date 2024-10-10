@@ -1,6 +1,6 @@
 import React from "react";
-import Header from "../Header/header"; // Importe o Header
-import Image from "next/image";
+// import Header from "../Header/header"; // Importe o Header
+// import Image from "next/image";
 import IconDashboards from "../images/iconDashboards";
 import IconFrequencia from "../images/iconFrequencia";
 import IconAreas from "../images/iconAreas";
