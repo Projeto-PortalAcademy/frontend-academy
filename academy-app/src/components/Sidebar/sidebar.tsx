@@ -5,7 +5,6 @@ import IconDashboards from "../images/iconDashboards";
 import IconFrequencia from "../images/iconFrequencia";
 import IconAreas from "../images/iconAreas";
 import IconUsuarios from "../images/iconUsuarios";
-import IconLogo from "../images/iconLogo";
 
 function Sidebar() {
   return (
@@ -15,7 +14,13 @@ function Sidebar() {
         <div className="text-white flex flex-col">
           {/* Logo */}
           <div className="flex items-center justify-center py-4 border-b border-gray-700">
-          <IconLogo className="h-16 w-60" />
+          <Image
+              src={`images/logoAcademy.png`}
+              alt="Logo Academy"
+              width={64}
+              height={64}
+              className="object-cover"
+            />
           </div>
 
           {/* Menu items */}
