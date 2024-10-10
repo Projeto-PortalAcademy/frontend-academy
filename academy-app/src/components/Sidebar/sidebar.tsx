@@ -1,6 +1,6 @@
 import React from "react";
-//import Header from "../Header/header"; // Importe o Header
 import Image from "next/image";
+import Link from "next/link";
 import IconDashboards from "../images/iconDashboards";
 import IconFrequencia from "../images/iconFrequencia";
 import IconAreas from "../images/iconAreas";
@@ -14,7 +14,7 @@ function Sidebar() {
         <div className="text-white flex flex-col">
           {/* Logo */}
           <div className="flex items-center justify-center py-4 border-b border-gray-700">
-          <Image
+            <Image
               src={`/images/logoAcademy.png`}
               alt="Logo Academy"
               width={150}
@@ -25,42 +25,24 @@ function Sidebar() {
 
           {/* Menu items */}
           <nav className="mt-10">
-            <a
-              href="#"
-              className="flex flex-col items-center py-2 px-6 text-white hover:bg-blue-700"
-            >
+            <Link href="/frequencia" className="flex flex-col items-center py-2 px-6 text-white hover:bg-blue-700">
               <IconFrequencia className="h-16 w-60" />
+            </Link>
 
-              
-            </a>
-
-            <a
-              href="#"
-              className="flex flex-col items-center py-2 px-6 text-white hover:bg-blue-700"
-            >
+            <Link href="/dashboards" className="flex flex-col items-center py-2 px-6 text-white hover:bg-blue-700">
               <IconDashboards className="h-16 w-60" />
+            </Link>
 
-            </a>
-
-            <a
-              href="#"
-              className="flex flex-col items-center py-2 px-6 text-white hover:bg-blue-700"
-            >
+            <Link href="/areas" className="flex flex-col items-center py-2 px-6 text-white hover:bg-blue-700">
               <IconAreas className="h-16 w-60" />
+            </Link>
 
-            </a>
-
-            <a
-              href="#"
-              className="flex flex-col items-center py-2 px-6 text-white hover:bg-blue-700"
-            >
+            <Link href="/usuarios" className="flex flex-col items-center py-2 px-6 text-white hover:bg-blue-700">
               <IconUsuarios className="h-16 w-60" />
-            </a>
+            </Link>
           </nav>
         </div>
       </div>
-
-
     </div>
   );
 }
