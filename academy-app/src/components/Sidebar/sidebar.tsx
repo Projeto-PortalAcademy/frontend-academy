@@ -14,10 +14,10 @@ function Sidebar() {
           {/* Logo */}
           <div className="flex items-center justify-center py-4 border-b border-gray-700">
           <Image
-              src={`images/logoAcademy.png`}
+              src={`/images/logoAcademy.png`}
               alt="Logo Academy"
-              width={64}
-              height={64}
+              width={150}
+              height={300}
               className="object-cover"
             />
           </div>
