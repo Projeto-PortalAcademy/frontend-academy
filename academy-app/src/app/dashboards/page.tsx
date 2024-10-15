@@ -6,8 +6,6 @@ const Dashboards = () => {
     nome: "Amy Winehouse",
     area: "Ciência de dados",
     squad: "LSD",
-    skills: ["Comunicação", "Organização", "Liderança", "Gestão do Tempo", "Criatividade"],
-    tecnologias: ["Python", "Apache Spark", "Bitbucket", "Apache Beam", "Apache Airflow"],
   };
 
   return (
