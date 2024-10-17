@@ -1,7 +1,16 @@
 import FilterAndSearch from "@/components/FilterAndSearch/FilterAndSearch";
 import PresenceChart from "@/components/PresenceChart/PresenceChart";
+import Estagiario from "@/components/Estagiario/estagiario";
 
 export default function Home() {
+
+  const dadosEstagiario = {
+    nome: "Camila Yatabe",
+    area: "Engenharia de Dados",
+    squad: "404 Not Found",
+    imagem: "",
+  };
+
   return (
     <div className="flex flex-col p-4">
       {/* Título */}
@@ -18,6 +27,14 @@ export default function Home() {
       <div className="mt-10">
         <PresenceChart />
       </div>
+
+      <Estagiario 
+        nome={dadosEstagiario.nome}
+        area={dadosEstagiario.area}
+        squad={dadosEstagiario.squad}
+        imagem={dadosEstagiario.imagem} 
+      />
     </div>
+
   );
 }
