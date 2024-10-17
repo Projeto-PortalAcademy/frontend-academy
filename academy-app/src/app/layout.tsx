@@ -1,4 +1,3 @@
-// src/app/layout.tsx ou src/app/RootLayout.tsx
 import type { Metadata } from "next";
 import "./globals.css";
 import React from "react";
@@ -17,13 +16,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="flex">
+      <body className="flex h-screen">
         {/* Sidebar em todas as páginas */}
         <Sidebar />
-        {/* Conteúdo principal da página */}
-        <div className="flex-grow">{children}</div>
-        <div className="flex-1">
+        <div className="flex flex-col flex-grow">
+          {/* Header fixado no topo */}
           <Header />
+
+          {/* Conteúdo principal da página */}
+          <div className="flex-grow overflow-auto p-4">
+            {children}
+          </div>
         </div>
       </body>
     </html>
