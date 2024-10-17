@@ -1,7 +1,7 @@
 "use client";
 
-import React from 'react';
-import { Bar } from 'react-chartjs-2';
+import React from "react";
+import { Bar } from "react-chartjs-2";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -10,18 +10,38 @@ import {
   Title,
   Tooltip,
   Legend,
-} from 'chart.js';
+} from "chart.js";
 
-ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+);
 
 const PresenceChart: React.FC = () => {
   const data = {
-    labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+    labels: [
+      "Janeiro",
+      "Fevereiro",
+      "Março",
+      "Abril",
+      "Maio",
+      "Junho",
+      "Julho",
+      "Agosto",
+      "Setembro",
+      "Outubro",
+      "Novembro",
+      "Dezembro",
+    ],
     datasets: [
       {
-        label: 'Presença Média (%)',
+        label: "Presença Média (%)",
         data: [85, 90, 78, 88, 76, 92, 80, 87, 85, 90, 89, 91],
-        backgroundColor: 'rgba(54, 162, 235, 0.6)',
+        backgroundColor: "rgba(54, 162, 235, 0.6)",
       },
     ],
   };
@@ -30,11 +50,11 @@ const PresenceChart: React.FC = () => {
     responsive: true,
     plugins: {
       legend: {
-        position: 'top' as const,
+        position: "top" as const,
       },
       title: {
         display: true,
-        text: 'Média de Presença por Mês',
+        text: "Média de Presença por Mês",
       },
     },
     scales: {
@@ -42,7 +62,7 @@ const PresenceChart: React.FC = () => {
         beginAtZero: true,
         ticks: {
           callback: function (value: number) {
-            return value + '%';
+            return value + "%";
           },
         },
       },
