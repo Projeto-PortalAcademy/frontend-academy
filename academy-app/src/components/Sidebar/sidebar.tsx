@@ -54,8 +54,7 @@ function Sidebar() {
           </nav>
         </div>
       </div>
-      <div className="flex-1 pl-64 md:pl-28 p-4">
-      </div>
+      <div className="flex-1 pl-64 md:pl-28 p-4"></div>
     </div>
   );
 }

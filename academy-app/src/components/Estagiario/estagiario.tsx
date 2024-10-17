@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import IconButton from "@/components/IconButton/button";
 import { AiOutlineFileText, AiOutlinePlus } from "react-icons/ai";
-import RoundImage from "../RoundImage/image"; 
+import RoundImage from "../RoundImage/image";
 import PopUp from "./popup";
 
 const skill_colors = ["#BE5989", "#7DA6C3", "#EEF5A0", "#8EC594", "#D398D4"];
@@ -111,7 +111,11 @@ const Estagiario = ({ nome, area, squad, imagem }) => {
               </span>
             </div>
           ))}
-          <IconButton texto="" Icone={AiOutlinePlus} onClick={() => setIsSkillPopupOpen(true)} />
+          <IconButton
+            texto=""
+            Icone={AiOutlinePlus}
+            onClick={() => setIsSkillPopupOpen(true)}
+          />
         </div>
       </div>
 
@@ -166,7 +170,11 @@ const Estagiario = ({ nome, area, squad, imagem }) => {
               </span>
             </div>
           ))}
-          <IconButton texto="" Icone={AiOutlinePlus} onClick={() => setIsTechPopupOpen(true)} />
+          <IconButton
+            texto=""
+            Icone={AiOutlinePlus}
+            onClick={() => setIsTechPopupOpen(true)}
+          />
         </div>
       </div>
 

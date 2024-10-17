@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Area from "@/components/userPerArea/boxArea";
 import {
@@ -38,7 +38,7 @@ export default function Areas() {
 
   const [open, setOpen] = useState(false);
   const [newAreaName, setNewAreaName] = useState("");
-  const [users, setUsers] = useState<User[]>([]); 
+  const [users, setUsers] = useState<User[]>([]);
   const [selectedUser, setSelectedUser] = useState<User>("");
 
   const addArea = () => {
@@ -64,27 +64,39 @@ export default function Areas() {
     setUsers(users.filter((u) => u !== user));
   };
 
-
   return (
-    <Box p={4} sx={{ overflowX: "hidden", maxWidth: "100vw", boxSizing: "border-box" }}>
+    <Box
+      p={4}
+      sx={{ overflowX: "hidden", maxWidth: "100vw", boxSizing: "border-box" }}
+    >
       <Typography variant="h4" fontWeight="bold" mb={4}>
-        Usuários por áreas
+        Usuários por Squads
       </Typography>
-      <AppBar position="static" elevation={0} sx={{ mb: 4, backgroundColor: "white", width: "100%" }}>
+      <AppBar
+        position="static"
+        elevation={0}
+        sx={{ mb: 4, backgroundColor: "white", width: "100%" }}
+      >
         <Toolbar>
           <FormControl variant="outlined" sx={{ mr: 2, minWidth: 120 }}>
             <InputLabel>Filtrar por:</InputLabel>
             <Select label="Filtrar por">
               <MenuItem value="Todos">Todos</MenuItem>
               <MenuItem value="Ciência de dados">Ciência de dados</MenuItem>
-              <MenuItem value="Engenharia de dados">Engenharia de dados</MenuItem>
+              <MenuItem value="Engenharia de dados">
+                Engenharia de dados
+              </MenuItem>
               <MenuItem value="Front-end">Front-end</MenuItem>
               <MenuItem value="Machine Learning">Machine Learning</MenuItem>
               <MenuItem value="DevOps">DevOps</MenuItem>
               <MenuItem value="Back-end">Back-end</MenuItem>
             </Select>
           </FormControl>
-          <TextField label="Pesquisar" variant="outlined" sx={{ flexGrow: 1 }} />
+          <TextField
+            label="Pesquisar"
+            variant="outlined"
+            sx={{ flexGrow: 1 }}
+          />
         </Toolbar>
       </AppBar>
       <Box
@@ -94,7 +106,12 @@ export default function Areas() {
         sx={{ maxWidth: "100%", overflowX: "hidden", boxSizing: "border-box" }}
       >
         {areas.map((area, index) => (
-          <Area key={index} title={area.title} userCount={area.userCount} userIconColor={area.userIconColor} />
+          <Area
+            key={index}
+            title={area.title}
+            userCount={area.userCount}
+            userIconColor={area.userIconColor}
+          />
         ))}
       </Box>
       <Tooltip title="Adicionar novo time" arrow>
@@ -113,8 +130,15 @@ export default function Areas() {
         </Fab>
       </Tooltip>
 
-      <Dialog open={open} onClose={() => setOpen(false)} fullWidth maxWidth="md">
-        <DialogTitle sx={{ textAlign: "center", color: "black", marginBottom:"10px" }}>
+      <Dialog
+        open={open}
+        onClose={() => setOpen(false)}
+        fullWidth
+        maxWidth="md"
+      >
+        <DialogTitle
+          sx={{ textAlign: "center", color: "black", marginBottom: "10px" }}
+        >
           Adicionar Squad
           <IconButton
             color="inherit"
@@ -125,7 +149,14 @@ export default function Areas() {
             <CloseIcon />
           </IconButton>
         </DialogTitle>
-        <DialogContent sx={{ display: "flex", flexDirection: "column", alignItems: "center", width: "100%" }}>
+        <DialogContent
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            width: "100%",
+          }}
+        >
           <TextField
             label="Nome da área"
             fullWidth
@@ -135,7 +166,10 @@ export default function Areas() {
           />
           <FormControl fullWidth sx={{ mb: 2 }}>
             <InputLabel>Escolha usuários</InputLabel>
-            <Select value={selectedUser} onChange={(e) => setSelectedUser(e.target.value)}>
+            <Select
+              value={selectedUser}
+              onChange={(e) => setSelectedUser(e.target.value)}
+            >
               <MenuItem value="Matheus Elis">Matheus Elis</MenuItem>
               <MenuItem value="Ronaldo Moreira">Ronaldo Moreira</MenuItem>
               <MenuItem value="Gustavo Silva">Gustavo Silva</MenuItem>
@@ -182,8 +216,20 @@ export default function Areas() {
                   whiteSpace: "nowrap",
                 }}
               >
-                <Box sx={{ flexGrow: 1, overflow: "hidden", textOverflow: "ellipsis" }}>{user}</Box>
-                <IconButton size="small" onClick={() => handleRemoveUser(user)} sx={{ ml: 1, flexShrink: 0 }}>
+                <Box
+                  sx={{
+                    flexGrow: 1,
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
+                  }}
+                >
+                  {user}
+                </Box>
+                <IconButton
+                  size="small"
+                  onClick={() => handleRemoveUser(user)}
+                  sx={{ ml: 1, flexShrink: 0 }}
+                >
                   <CloseIcon fontSize="small" />
                 </IconButton>
               </Box>
@@ -193,7 +239,10 @@ export default function Areas() {
         <DialogActions sx={{ justifyContent: "center" }}>
           <Button
             onClick={addArea}
-            sx={{ backgroundColor: "#4963bf", "&:hover": { backgroundColor: "#2b396b" } }}
+            sx={{
+              backgroundColor: "#4963bf",
+              "&:hover": { backgroundColor: "#2b396b" },
+            }}
             variant="contained"
           >
             ADICIONAR
