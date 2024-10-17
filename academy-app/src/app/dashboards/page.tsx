@@ -2,6 +2,7 @@ import FilterAndSearch from "@/components/FilterAndSearch/FilterAndSearch";
 import PresenceChart from "@/components/PresenceChart/PresenceChart";
 
 export default function Home() {
+
   return (
     <div className="flex flex-col p-4">
       {/* Título */}
@@ -18,6 +19,8 @@ export default function Home() {
       <div className="mt-10">
         <PresenceChart />
       </div>
+
     </div>
+
   );
 }
