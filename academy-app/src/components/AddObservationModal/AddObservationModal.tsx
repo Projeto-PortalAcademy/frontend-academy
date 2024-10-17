@@ -5,7 +5,10 @@ interface AddObservationModalProps {
   onClose: () => void;
 }
 
-const AddObservationModal: React.FC<AddObservationModalProps> = ({ isOpen, onClose }) => {
+const AddObservationModal: React.FC<AddObservationModalProps> = ({
+  isOpen,
+  onClose,
+}) => {
   if (!isOpen) return null;
 
   return (
@@ -13,8 +16,13 @@ const AddObservationModal: React.FC<AddObservationModalProps> = ({ isOpen, onClo
       <div className="bg-white w-96 p-6 rounded-lg shadow-lg">
         {/* Header do Modal */}
         <div className="flex justify-between items-center border-b pb-2 mb-4">
-          <h2 className="text-lg font-bold text-blue-800">Adicionar observação</h2>
-          <button onClick={onClose} className="text-gray-500 hover:text-gray-700">
+          <h2 className="text-lg font-bold text-blue-800">
+            Adicionar observação
+          </h2>
+          <button
+            onClick={onClose}
+            className="text-gray-500 hover:text-gray-700"
+          >
             &times;
           </button>
         </div>
