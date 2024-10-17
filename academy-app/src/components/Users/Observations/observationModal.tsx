@@ -1,7 +1,7 @@
 // src/components/ObservationModal.tsx
 import React from "react";
 import { Modal, Box, Typography } from "@mui/material";
-import ObservationCard from "@/components/Observations/observationCard"; // Ajuste o caminho conforme necessário
+import ObservationCard from "@/components/Users/Observations/observationCard"; // Ajuste o caminho conforme necessário
 
 // Define o tipo para uma observação
 interface Observation {
