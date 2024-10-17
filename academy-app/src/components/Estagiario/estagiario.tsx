@@ -71,7 +71,7 @@ const Estagiario = ({ nome, area, squad, imagem }) => {
         </div>
       </div>
 
-      <div style={{ marginTop: "3em", maxWidth: "26%" }}>
+      <div style={{ marginTop: "3em", maxWidth: "33%" }}>
         <h3>Soft Skills</h3>
         <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
           {softSkills.map((skill, index) => (
@@ -86,7 +86,6 @@ const Estagiario = ({ nome, area, squad, imagem }) => {
                 alignItems: "center",
                 textTransform: "uppercase",
                 position: "relative",
-                fontWeight: "bold",
               }}
             >
               {skill.name}
@@ -142,7 +141,6 @@ const Estagiario = ({ nome, area, squad, imagem }) => {
                 alignItems: "center",
                 textTransform: "uppercase",
                 position: "relative",
-                fontWeight: "bold",
               }}
             >
               {tech.name}
@@ -182,6 +180,19 @@ const Estagiario = ({ nome, area, squad, imagem }) => {
           placeholder="Digite a Tecnologia"
         />
       )}
+
+      <div style={{ display: "flex", gap: "10px", marginTop: "20px" }}>
+        <IconButton
+          texto="OBSERVAÇÕES"
+          Icone={AiOutlineFileText}
+          onClick={() => alert("Observações")}
+        />
+        <IconButton
+          texto="GERAR RELATÓRIO"
+          Icone={AiOutlineFileText}
+          onClick={() => alert("Relatório gerado")}
+        />
+      </div>
     </div>
   );
 };
