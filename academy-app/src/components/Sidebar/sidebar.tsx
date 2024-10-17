@@ -8,10 +8,10 @@ import IconUsuarios from "../images/iconUsuarios";
 
 function Sidebar() {
   return (
-    <div className="flex h-screen">
-      {/* Sidebar */}
+    <div className="flex">
+      {/* Sidebar fixa */}
       <div
-        className="w-64 md:w-28 h-screen"
+        className="fixed top-0 left-0 w-64 md:w-28 h-screen"
         style={{ backgroundColor: "rgba(12, 42, 88, 1)" }}
       >
         <div className="text-white flex flex-col items-center">
@@ -60,7 +60,7 @@ function Sidebar() {
       </div>
 
       {/* Conteúdo principal */}
-      <div className="flex-1 p-4">
+      <div className="ml-64 md:ml-28 flex-1 p-4">
         {/* Aqui você renderiza o conteúdo das páginas */}
       </div>
     </div>
