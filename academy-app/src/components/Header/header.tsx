@@ -6,8 +6,7 @@ const Header: React.FC = () => {
     <header className="flex items-center justify-end w-full py-4 px-8">
       {/* Ícone de Sino */}
       <div className="mr-4">
-        <FaBell className="text-gray-800" size={20} />{" "}
-        {/* Ícone de sino ajustado */}
+        <FaBell className="text-gray-800" size={20} /> {/* Ícone de sino ajustado */}
       </div>
 
       {/* Contêiner para Avatar e Nome do Usuário */}
