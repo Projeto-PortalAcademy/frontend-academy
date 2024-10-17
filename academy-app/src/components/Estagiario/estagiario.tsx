@@ -3,7 +3,8 @@
 import React, { useState } from "react";
 import IconButton from "@/components/IconButton/button";
 import { AiOutlineFileText, AiOutlinePlus } from "react-icons/ai";
-import RoundImage from "../RoundImage/image"; // Ajuste o caminho conforme necessário
+import RoundImage from "../RoundImage/image"; 
+import PopUp from "./popup";
 
 const skill_colors = ["#BE5989", "#7DA6C3", "#EEF5A0", "#8EC594", "#D398D4"];
 const tech_colors = ["#8EC594", "#D398D4", "#EEF5A0", "#BE5989", "#7DA6C3"];
@@ -41,13 +42,11 @@ const Estagiario = ({ nome, area, squad, imagem }) => {
   };
 
   const handleRemoveSkill = (index) => {
-    const updatedSkills = softSkills.filter((_, i) => i !== index);
-    setSoftSkills(updatedSkills);
+    setSoftSkills(softSkills.filter((_, i) => i !== index));
   };
 
   const handleRemoveTecnologia = (index) => {
-    const updatedTecnologias = tecnologiasList.filter((_, i) => i !== index);
-    setTecnologiasList(updatedTecnologias);
+    setTecnologiasList(tecnologiasList.filter((_, i) => i !== index));
   };
 
   return (
@@ -65,8 +64,6 @@ const Estagiario = ({ nome, area, squad, imagem }) => {
               borderRadius: "4px",
               fontWeight: "bold",
               fontSize: "14px",
-              minWidth: "fit-content",
-              maxWidth: "fit-content"
             }}
           >
             Squad: {squad}
@@ -74,27 +71,22 @@ const Estagiario = ({ nome, area, squad, imagem }) => {
         </div>
       </div>
 
-      <div style={{ marginTop: "3em", maxWidth: "33%", }}>
+      <div style={{ marginTop: "3em", maxWidth: "26%" }}>
         <h3>Soft Skills</h3>
         <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
           {softSkills.map((skill, index) => (
             <div
               key={index}
               style={{
-                backgroundColor: skill.color, // ou tech.color
-                color: "black",
+                backgroundColor: skill.color,
                 padding: "4px 8px",
                 borderRadius: "4px",
-                fontWeight: "bold",
-                fontSize: "14px",
-                position: "relative",
-                minWidth: "fit-content",
-                maxWidth: "fit-content",
-                minHeight: "40px", // Define uma altura mínima para manter os cards consistentes
-                display: "flex", // Garante que o conteúdo interno tenha layout consistente
-                alignItems: "center", // Alinha o conteúdo verticalmente
+                minHeight: "40px",
+                display: "flex",
+                alignItems: "center",
                 textTransform: "uppercase",
-
+                position: "relative",
+                fontWeight: "bold",
               }}
             >
               {skill.name}
@@ -113,8 +105,6 @@ const Estagiario = ({ nome, area, squad, imagem }) => {
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  
-                  
                 }}
                 onClick={() => handleRemoveSkill(index)}
               >
@@ -122,44 +112,37 @@ const Estagiario = ({ nome, area, squad, imagem }) => {
               </span>
             </div>
           ))}
-          <IconButton texto="" Icone={AiOutlinePlus} onClick={() => setIsSkillPopupOpen(true)}/>
+          <IconButton texto="" Icone={AiOutlinePlus} onClick={() => setIsSkillPopupOpen(true)} />
         </div>
-
-        {isSkillPopupOpen && (
-          <div style={{ position: "absolute", top: "30%", left: "50%", transform: "translate(-50%, -50%)", backgroundColor: "#fff", padding: "16px", borderRadius: "8px", boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)" }}>
-            <input
-              type="text"
-              value={novaSkill}
-              onChange={(e) => setNovaSkill(e.target.value)}
-              placeholder="Adicionar Skill"
-              style={{ padding: "8px", borderRadius: "8px", border: "1px solid #ccc", marginBottom: "8px" }}
-            />
-            <button onClick={handleAddSkill}>Adicionar</button>
-          </div>
-        )}
       </div>
 
-      <div style={{ marginTop: "3em", maxWidth: "33%", }}>
+      {isSkillPopupOpen && (
+        <PopUp
+          titulo="Adicionar Soft Skill"
+          valor={novaSkill}
+          onChange={(e) => setNovaSkill(e.target.value)}
+          onAdd={handleAddSkill}
+          onClose={() => setIsSkillPopupOpen(false)}
+          placeholder="Digite a Soft Skill"
+        />
+      )}
+
+      <div style={{ marginTop: "3em", maxWidth: "33%" }}>
         <h3>Tecnologias</h3>
         <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
           {tecnologiasList.map((tech, index) => (
             <div
               key={index}
               style={{
-                backgroundColor: tech.color, // ou tech.color
-                color: "black",
+                backgroundColor: tech.color,
                 padding: "4px 8px",
                 borderRadius: "4px",
-                fontWeight: "bold",
-                fontSize: "14px",
-                position: "relative",
-                minWidth: "fit-content",
-                maxWidth: "fit-content",
-                minHeight: "40px", // Define uma altura mínima para manter os cards consistentes
-                display: "flex", // Garante que o conteúdo interno tenha layout consistente
-                alignItems: "center", // Alinha o conteúdo verticalmente
+                minHeight: "40px",
+                display: "flex",
+                alignItems: "center",
                 textTransform: "uppercase",
-
+                position: "relative",
+                fontWeight: "bold",
               }}
             >
               {tech.name}
@@ -187,25 +170,18 @@ const Estagiario = ({ nome, area, squad, imagem }) => {
           ))}
           <IconButton texto="" Icone={AiOutlinePlus} onClick={() => setIsTechPopupOpen(true)} />
         </div>
-
-        {isTechPopupOpen && (
-          <div style={{ position: "absolute", top: "30%", left: "50%", transform: "translate(-50%, -50%)", backgroundColor: "#fff", padding: "16px", borderRadius: "8px", boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)" }}>
-            <input
-              type="text"
-              value={novaTecnologia}
-              onChange={(e) => setNovaTecnologia(e.target.value)}
-              placeholder="Adicionar Tecnologia"
-              style={{ padding: "8px", borderRadius: "8px", border: "1px solid #ccc", marginBottom: "8px" }}
-            />
-            <button onClick={handleAddTecnologia}>Adicionar</button>
-          </div>
-        )}
       </div>
 
-      <div style={{ display: "flex", gap: "10px", marginTop: "20px" }}>
-        <IconButton texto="OBSERVAÇÕES" Icone={AiOutlineFileText} onClick={() => alert("Observações")} />
-        <IconButton texto="GERAR RELATÓRIO" Icone={AiOutlineFileText} onClick={() => alert("Relatório gerado")} />
-      </div>
+      {isTechPopupOpen && (
+        <PopUp
+          titulo="Adicionar Tecnologia"
+          valor={novaTecnologia}
+          onChange={(e) => setNovaTecnologia(e.target.value)}
+          onAdd={handleAddTecnologia}
+          onClose={() => setIsTechPopupOpen(false)}
+          placeholder="Digite a Tecnologia"
+        />
+      )}
     </div>
   );
 };
