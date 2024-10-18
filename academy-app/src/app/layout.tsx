@@ -17,15 +17,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="flex h-screen">
-      <body className="flex h-screen">
         {/* Sidebar em todas as páginas */}
         <Sidebar />
         <div className="flex flex-col flex-grow">
           {/* Header fixado no topo */}
-        <div className="flex flex-col flex-grow">
-          {/* Header fixado no topo */}
           <Header />
-
           {/* Conteúdo principal da página */}
           <div className="flex-grow overflow-auto p-4">{children}</div>
         </div>
