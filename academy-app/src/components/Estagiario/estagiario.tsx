@@ -86,7 +86,7 @@ const Estagiario = ({ nome, area, squad, imagem }) => {
         </div>
       </div>
 
-      <div style={{ marginTop: "3em", maxWidth: "33%" }}>
+      <div style={{ marginTop: "3em", maxWidth: "100%" }}>
         <h3>Soft Skills</h3>
         <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
           {softSkills.map((skill, index) => (
