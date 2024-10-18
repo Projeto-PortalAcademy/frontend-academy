@@ -15,7 +15,13 @@ const PopUp = ({ titulo, valor, onChange, onAdd, onClose, placeholder }) => {
         minWidth: "300px",
       }}
     >
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
         <h3 style={{ margin: 0 }}>{titulo}</h3>
         <span
           style={{

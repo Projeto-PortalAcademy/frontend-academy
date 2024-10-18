@@ -8,15 +8,13 @@ import IconUsuarios from "../images/iconUsuarios";
 
 function Sidebar() {
   return (
-    <div className="flex">
-      {/* Sidebar fixa */}
+    <div className="flex h-screen overflow-hidden">
       <div
-        className="fixed top-0 left-0 w-64 md:w-28 h-screen"
+        className="fixed top-0 left-0 w-64 md:w-28 h-full"
         style={{ backgroundColor: "rgba(12, 42, 88, 1)" }}
       >
         <div className="text-white flex flex-col items-center">
-          {/* Logo */}
-          <div className="flex items-center justify-center py-4 border-b border-gray-700">
+          <div className="flex items-center justify-center py-4 border-b border-gray-700 w-full">
             <Image
               src={`/images/logoAcademy.png`}
               alt="Logo Academy"
@@ -25,8 +23,6 @@ function Sidebar() {
               className="object-cover"
             />
           </div>
-
-          {/* Menu items */}
           <nav className="mt-10 flex flex-col items-center space-y-4 w-full">
             <Link
               href="/frequencia"
@@ -58,11 +54,7 @@ function Sidebar() {
           </nav>
         </div>
       </div>
-
-      {/* Conteúdo principal */}
-      <div className="ml-64 md:ml-28 flex-1 p-4">
-        {/* Aqui você renderiza o conteúdo das páginas */}
-      </div>
+      <div className="flex-1 pl-64 md:pl-28 p-4"></div>
     </div>
   );
 }
