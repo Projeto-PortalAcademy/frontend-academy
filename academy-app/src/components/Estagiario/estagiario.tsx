@@ -145,7 +145,7 @@ const Estagiario = ({ nome, area, squad, imagem }) => {
         />
       )}
 
-      <div style={{ marginTop: "3em", maxWidth: "33%" }}>
+      <div style={{ marginTop: "3em", maxWidth: "100%" }}>
         <h3>Tecnologias</h3>
         <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
           {tecnologiasList.map((tech, index) => (
