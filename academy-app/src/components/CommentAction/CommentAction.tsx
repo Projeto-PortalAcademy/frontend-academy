@@ -21,7 +21,7 @@ const CommentAction: React.FC = () => {
       <div
         onClick={handleOpenModal}
         className="cursor-pointer inline-block"
-        style={{ width: '76px', height: '76px' }} // Definindo o tamanho da div igual ao do SVG
+        style={{ width: "76px", height: "76px" }} // Definindo o tamanho da div igual ao do SVG
       >
         <IconComments />
       </div>

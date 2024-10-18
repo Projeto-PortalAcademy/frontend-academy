@@ -24,9 +24,7 @@ export default function RootLayout({
           <Header />
 
           {/* Conteúdo principal da página */}
-          <div className="flex-grow overflow-auto p-4">
-            {children}
-          </div>
+          <div className="flex-grow overflow-auto p-4">{children}</div>
         </div>
       </body>
     </html>
