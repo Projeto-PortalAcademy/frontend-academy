@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import IconButton from "@/components/IconButton/button";
 import { AiOutlineFileText, AiOutlinePlus } from "react-icons/ai";
-import RoundImage from "../RoundImage/image"; 
+import RoundImage from "../RoundImage/image";
 import PopUp from "./popup";
 import ObservationModal from "@/components/Observation/observationModal"; // Ajuste o caminho conforme necessário
 
@@ -126,7 +126,11 @@ const Estagiario = ({ nome, area, squad, imagem }) => {
               </span>
             </div>
           ))}
-          <IconButton texto="" Icone={AiOutlinePlus} onClick={() => setIsSkillPopupOpen(true)} />
+          <IconButton
+            texto=""
+            Icone={AiOutlinePlus}
+            onClick={() => setIsSkillPopupOpen(true)}
+          />
         </div>
       </div>
 
@@ -181,7 +185,11 @@ const Estagiario = ({ nome, area, squad, imagem }) => {
               </span>
             </div>
           ))}
-          <IconButton texto="" Icone={AiOutlinePlus} onClick={() => setIsTechPopupOpen(true)} />
+          <IconButton
+            texto=""
+            Icone={AiOutlinePlus}
+            onClick={() => setIsTechPopupOpen(true)}
+          />
         </div>
       </div>
 

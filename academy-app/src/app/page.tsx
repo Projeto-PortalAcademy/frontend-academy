@@ -11,14 +11,10 @@ export default function Home() {
       </div>
 
       {/* Filtro e Pesquisa posicionados conforme a imagem */}
-      <div className="flex items-center justify-start space-x-4 mt-20">
-      
-      </div>
+      <div className="flex items-center justify-start space-x-4 mt-20"></div>
 
       {/* Gráfico de Presença */}
-      <div className="ml-40 mt-10">
-
-      </div>
+      <div className="ml-40 mt-10"></div>
     </div>
   );
 }
