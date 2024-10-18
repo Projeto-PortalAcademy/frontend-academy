@@ -5,6 +5,7 @@ import IconButton from "@/components/IconButton/button";
 import { AiOutlineFileText, AiOutlinePlus } from "react-icons/ai";
 import RoundImage from "../RoundImage/image";
 import PopUp from "./popup";
+import ObservationModal from "@/components/Observation/observationModal"; // Ajuste o caminho conforme necessário
 
 const skill_colors = ["#BE5989", "#7DA6C3", "#EEF5A0", "#8EC594", "#D398D4"];
 const tech_colors = ["#8EC594", "#D398D4", "#EEF5A0", "#BE5989", "#7DA6C3"];
@@ -16,6 +17,20 @@ const Estagiario = ({ nome, area, squad, imagem }) => {
   const [novaTecnologia, setNovaTecnologia] = useState("");
   const [isSkillPopupOpen, setIsSkillPopupOpen] = useState(false);
   const [isTechPopupOpen, setIsTechPopupOpen] = useState(false);
+
+  // Adição: Estado e funções para o modal de observações
+  const [isObservationModalOpen, setIsObservationModalOpen] = useState(false);
+  const [observations, setObservations] = useState([
+    { id: 1, title: "Feedback Inicial", description: "Bom desempenho na primeira semana", date: "17/10/2024" },
+    { id: 2, title: "Revisão Técnica", description: "Precisa melhorar na organização do código", date: "18/10/2024" },
+  ]);
+
+  const handleOpenObservationModal = () => setIsObservationModalOpen(true);
+  const handleCloseObservationModal = () => setIsObservationModalOpen(false);
+
+  const handleDeleteObservation = (id) => {
+    setObservations(observations.filter((obs) => obs.id !== id));
+  };
 
   const handleAddSkill = () => {
     if (novaSkill) {
@@ -193,7 +208,7 @@ const Estagiario = ({ nome, area, squad, imagem }) => {
         <IconButton
           texto="OBSERVAÇÕES"
           Icone={AiOutlineFileText}
-          onClick={() => alert("Observações")}
+          onClick={handleOpenObservationModal} // Abre o modal de observações
         />
         <IconButton
           texto="GERAR RELATÓRIO"
@@ -201,6 +216,14 @@ const Estagiario = ({ nome, area, squad, imagem }) => {
           onClick={() => alert("Relatório gerado")}
         />
       </div>
+
+      {/* Modal de Observações */}
+      <ObservationModal
+        open={isObservationModalOpen}
+        onClose={handleCloseObservationModal}
+        observations={observations}
+        onDelete={handleDeleteObservation}
+      />
     </div>
   );
 };
