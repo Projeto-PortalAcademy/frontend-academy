@@ -4,9 +4,9 @@ import React from "react";
 const IconAvaliacao: React.FC<React.SVGProps<SVGSVGElement>> = () => {
   return (
     <svg
-      width="68"
-      height="68"
-      viewBox="0 0 68 68"
+      width="50"
+      height="50"
+      viewBox="0 0 70 73"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
