@@ -22,7 +22,7 @@ const PresenceStatus: React.FC<PresenceStatusProps> = ({ status, onClick }) => {
   return (
     <button
       onClick={onClick}
-      className={`w-12 h-12 rounded-full ${getColor()} flex items-center justify-center`}
+      className={`w-12 h-12 rounded-full ${getColor()}`}
     >
       <span className="text-black font-bold">{status}</span>
     </button>
