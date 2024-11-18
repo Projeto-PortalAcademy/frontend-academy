@@ -22,7 +22,6 @@ export default function RootLayout({
         <div className="flex flex-col flex-grow">
           {/* Header fixado no topo */}
           <Header />
-
           {/* Conteúdo principal da página */}
           <div className="flex-grow overflow-auto p-4">{children}</div>
         </div>

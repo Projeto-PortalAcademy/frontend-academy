@@ -1,4 +1,4 @@
-"use client"; // Adicionando a diretiva de client-side para o Next.js
+"use client";
 
 import React, { useState } from "react";
 import IconComments from "../images/iconComments";

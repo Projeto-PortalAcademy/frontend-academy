@@ -5,6 +5,7 @@ import IconDashboards from "../images/iconDashboards";
 import IconFrequencia from "../images/iconFrequencia";
 import IconAreas from "../images/iconAreas";
 import IconUsuarios from "../images/iconUsuarios";
+import IconAvaliacao from "../images/iconAvaliacao";
 
 function Sidebar() {
   return (
@@ -50,6 +51,13 @@ function Sidebar() {
               className="flex items-center justify-center w-full py-2 text-white hover:bg-blue-700 transition-colors duration-200"
             >
               <IconUsuarios className="h-10 w-10 md:h-16 md:w-16" />
+            </Link>
+
+            <Link
+              href="/avaliacao"
+              className="flex items-center justify-center w-full py-2 text-white hover:bg-blue-700 transition-colors duration-200"
+            >
+              <IconAvaliacao className="h-5 w-10 md:h-16 md:w-16" />
             </Link>
           </nav>
         </div>
