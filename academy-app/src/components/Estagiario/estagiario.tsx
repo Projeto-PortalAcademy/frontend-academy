@@ -21,8 +21,18 @@ const Estagiario = ({ nome, area, squad, imagem }) => {
   // Adição: Estado e funções para o modal de observações
   const [isObservationModalOpen, setIsObservationModalOpen] = useState(false);
   const [observations, setObservations] = useState([
-    { id: 1, title: "Feedback Inicial", description: "Bom desempenho na primeira semana", date: "17/10/2024" },
-    { id: 2, title: "Revisão Técnica", description: "Precisa melhorar na organização do código", date: "18/10/2024" },
+    {
+      id: 1,
+      title: "Feedback Inicial",
+      description: "Bom desempenho na primeira semana",
+      date: "17/10/2024",
+    },
+    {
+      id: 2,
+      title: "Revisão Técnica",
+      description: "Precisa melhorar na organização do código",
+      date: "18/10/2024",
+    },
   ]);
 
   const handleOpenObservationModal = () => setIsObservationModalOpen(true);

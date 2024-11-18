@@ -1,4 +1,4 @@
-'use client'; // Garante que é um Client Component
+"use client"; // Garante que é um Client Component
 
 import React from "react";
 import Estagiario from "@/components/Estagiario/estagiario";
