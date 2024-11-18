@@ -1,4 +1,4 @@
-"use client"; // Adicionando a diretiva de client-side para o Next.js
+"use client";
 
 import React, { useState } from "react";
 import IconComments from "../images/iconComments";
@@ -21,7 +21,7 @@ const CommentAction: React.FC = () => {
       <div
         onClick={handleOpenModal}
         className="cursor-pointer inline-block"
-        style={{ width: '76px', height: '76px' }} // Definindo o tamanho da div igual ao do SVG
+        style={{ width: "76px", height: "76px" }} // Definindo o tamanho da div igual ao do SVG
       >
         <IconComments />
       </div>
