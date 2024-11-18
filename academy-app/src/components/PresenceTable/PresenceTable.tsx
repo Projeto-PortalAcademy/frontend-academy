@@ -46,8 +46,6 @@ const AttendanceTable: React.FC<AttendanceTableProps> = ({
           <tr>
             <th className="px-4 py-2 text-center">Alunos</th>
             <th className="px-4 py-2 text-center">Presença</th>
-            <th className="px-4 py-2 text-center">Histórico</th>
-
           </tr>
         </thead>
         <tbody>
@@ -64,6 +62,10 @@ const AttendanceTable: React.FC<AttendanceTableProps> = ({
               </td>
               <td className="px-4 py-2 text-center flex justify-center items-center">
                 <IconButton
+                 style={{
+                  boxShadow: "",
+                  fontWeight: "regular",
+                }}
                   texto="Ver Histórico"
                   Icone={FaHistory}
                   onClick={() => alert(`Abrindo histórico de ${student.name}...`)}
