@@ -10,9 +10,17 @@ import {
   Title,
   Tooltip,
   Legend,
+  ChartOptions,
 } from "chart.js";
 
-ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend
+);
 
 const PresenceChart: React.FC = () => {
   const data = {
@@ -43,7 +51,7 @@ const PresenceChart: React.FC = () => {
     ],
   };
 
-  const options = {
+  const options: ChartOptions<"bar"> = {
     responsive: true,
     maintainAspectRatio: false, // Isso permite ajustar a altura e a largura
     plugins: {
@@ -81,8 +89,9 @@ const PresenceChart: React.FC = () => {
       y: {
         beginAtZero: true,
         ticks: {
-          callback: function (value: number) {
-            return value + "%";
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          callback: function (value: any) {
+            return `${value}%`;
           },
           color: "#6B7280", // Cor dos rótulos no eixo y
         },

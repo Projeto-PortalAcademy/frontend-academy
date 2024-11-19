@@ -3,8 +3,14 @@
 import React, { useState } from "react";
 import UserTable from "@/components/UserTable/userTable";
 
+interface User {
+  id: number;
+  name: string;
+  email: string;
+  role: string;
+}
+
 const Usuarios: React.FC = () => {
-  // Dados iniciais dos usuários
   const initialUsers: User[] = [
     { id: 1, name: "Sergio R. Nascimento", email: "sergiorjcj7@gmail.com", role: "Avaliador" },
     { id: 2, name: "Felipe Camargo", email: "felipecamargo@gmail.com", role: "Estagiário" },
@@ -15,21 +21,17 @@ const Usuarios: React.FC = () => {
     { id: 7, name: "Thiago Tavares", email: "tavares007@gmail.com", role: "Estagiário" },
   ];
 
-  // Estado para a lista de usuários
   const [users, setUsers] = useState<User[]>(initialUsers);
 
-  // Função para deletar um usuário
   const handleDelete = (id: number) => {
     const confirmDelete = confirm(`Você tem certeza que deseja deletar o usuário com ID ${id}?`);
     if (confirmDelete) {
-      // Atualiza o estado removendo o usuário com o ID correspondente
       const updatedUsers = users.filter((user) => user.id !== id);
       setUsers(updatedUsers);
       alert(`Usuário com ID ${id} foi deletado.`);
     }
   };
 
-  // Função para acessar a página do usuário
   const handleViewPage = (id: number) => {
     alert(`Abrindo a página do usuário com ID ${id}.`);
   };

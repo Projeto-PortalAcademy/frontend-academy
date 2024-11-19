@@ -14,7 +14,6 @@ const AddObservationModal: React.FC<AddObservationModalProps> = ({
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
       <div className="bg-white w-96 p-6 rounded-lg shadow-lg">
-        {/* Header do Modal */}
         <div className="flex justify-between items-center border-b pb-2 mb-4">
           <h2 className="text-lg font-bold text-blue-800">
             Adicionar observação
@@ -27,7 +26,6 @@ const AddObservationModal: React.FC<AddObservationModalProps> = ({
           </button>
         </div>
 
-        {/* Formulário */}
         <form>
           <div className="mb-4">
             <label className="block text-gray-700 font-bold">Data:</label>
@@ -57,7 +55,6 @@ const AddObservationModal: React.FC<AddObservationModalProps> = ({
             />
           </div>
 
-          {/* Botão Adicionar */}
           <div className="flex justify-center">
             <button
               type="button"

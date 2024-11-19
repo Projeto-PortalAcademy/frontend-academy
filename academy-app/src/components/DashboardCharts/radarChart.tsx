@@ -1,8 +1,7 @@
-"use client"; // Adiciona a diretiva para ser um Client Component
+"use client";
 
 import React from "react";
 import {
-  Radar as RadarChartJS,
   Chart as ChartJS,
   RadialLinearScale,
   PointElement,
@@ -13,7 +12,6 @@ import {
 } from "chart.js";
 import { Radar } from "react-chartjs-2";
 
-// Registra os componentes do Chart.js
 ChartJS.register(
   RadialLinearScale,
   PointElement,
