@@ -30,7 +30,6 @@ function Sidebar() {
             >
               <IconFrequencia className="h-10 w-10 md:h-16 md:w-16" />
             </Link>
-
             <Link
               href="/dashboards"
               className="flex items-center justify-center w-full py-2 text-white hover:bg-blue-700 transition-colors duration-200"

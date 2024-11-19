@@ -1,8 +1,15 @@
 import React, { useState } from "react";
-import { AiOutlineUser } from "react-icons/ai"; // Importando o ícone de usuário
+import { AiOutlineUser } from "react-icons/ai";
+import Image from "next/image";
 
-const RoundImage = ({ src, alt = "foto aqui", size = 100 }) => {
-  const [imageError, setImageError] = useState(false); // Estado para detectar erro na imagem
+interface RoundImageProps {
+  src: string;
+  alt?: string;
+  size?: number;
+}
+
+const RoundImage: React.FC<RoundImageProps> = ({ src, alt = "foto aqui", size = 100 }) => {
+  const [imageError, setImageError] = useState(false);
 
   return (
     <div
@@ -15,20 +22,21 @@ const RoundImage = ({ src, alt = "foto aqui", size = 100 }) => {
         alignItems: "center",
         justifyContent: "center",
         boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-        backgroundColor: "#fff", // Fundo branco como no exemplo enviado
+        backgroundColor: "#fff",
       }}
     >
       {imageError || !src ? (
-        <AiOutlineUser size={size * 0.6} color="#000" /> // Ícone preto
+        <AiOutlineUser size={size * 0.6} color="#000" />
       ) : (
-        <img
+        <Image
           src={src}
           alt={alt}
-          onError={() => setImageError(true)} // Se erro, exibe o ícone
+          width={size}
+          height={size}
+          onError={() => setImageError(true)}
           style={{
-            width: "100%",
-            height: "100%",
-            objectFit: "cover", // Mantém a proporção da imagem
+            objectFit: "cover",
+            borderRadius: "50%",
           }}
         />
       )}

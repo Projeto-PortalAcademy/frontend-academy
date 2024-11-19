@@ -10,6 +10,7 @@ import {
   Title,
   Tooltip,
   Legend,
+  ChartOptions,
 } from "chart.js";
 
 ChartJS.register(
@@ -18,7 +19,7 @@ ChartJS.register(
   BarElement,
   Title,
   Tooltip,
-  Legend,
+  Legend
 );
 
 const PresenceChart: React.FC = () => {
@@ -46,11 +47,11 @@ const PresenceChart: React.FC = () => {
     ],
   };
 
-  const options = {
+  const options: ChartOptions<"bar"> = {
     responsive: true,
     plugins: {
       legend: {
-        position: "top" as const,
+        position: "top",
       },
       title: {
         display: true,
@@ -61,8 +62,9 @@ const PresenceChart: React.FC = () => {
       y: {
         beginAtZero: true,
         ticks: {
-          callback: function (value: number) {
-            return value + "%";
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          callback: function (value: any) {
+            return `${value}%`;
           },
         },
       },

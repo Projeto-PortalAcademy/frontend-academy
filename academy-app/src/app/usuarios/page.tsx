@@ -1,9 +1,9 @@
-'use client'; // Garante que é um Client Component
+"use client"; // Garante que é um Client Component
 
 import React from "react";
 import Estagiario from "@/components/Estagiario/estagiario";
 import RadarChart from "@/components/DashboardCharts/radarChart";
-import PieChart from "@/components/DashboardCharts/pieChart"; // Importa o gráfico de pizza
+import PieChart from "@/components/DashboardCharts/pieChart";
 
 const Usuarios = () => {
   const dadosEstagiario = {
@@ -17,7 +17,7 @@ const Usuarios = () => {
     <div
       style={{
         display: "flex",
-        justifyContent: "space-between", // Mantém o espaço distribuído entre colunas
+        justifyContent: "space-between",
         alignItems: "center",
         width: "85%",
         margin: "20px auto",
@@ -33,13 +33,12 @@ const Usuarios = () => {
         />
       </div>
 
-      {/* Gráficos em linha */}
       <div
         style={{
           display: "flex",
           alignItems: "center",
-          justifyContent: "space-evenly", // Centraliza os gráficos horizontalmente
-          width: "100%", // Garante que ambos os gráficos se distribuam bem
+          justifyContent: "space-evenly",
+          width: "100%",
           gap: "50px",
         }}
       >

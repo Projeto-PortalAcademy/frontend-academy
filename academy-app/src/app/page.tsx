@@ -1,9 +1,9 @@
 // pages/index.tsx
-import React from 'react';
-import EvaluationHeader from '../components/EvaluationHeader/EvaluationHeader';
-import FilterAndSearch from '../components/FilterAndSearch/FilterAndSearch';
-import EvaluationCard from '../components/EvaluationCard/EvaluationCard';
-import CreateEvaluationButton from '../components/CreateEvaluationButton/CreateEvaluationButton';
+import React from "react";
+import EvaluationHeader from "../components/EvaluationHeader/EvaluationHeader";
+import FilterAndSearch from "../components/FilterAndSearch/FilterAndSearch";
+import EvaluationCard from "../components/EvaluationCard/EvaluationCard";
+import CreateEvaluationButton from "../components/CreateEvaluationButton/CreateEvaluationButton";
 
 export default function Home() {
   return (
@@ -20,10 +20,30 @@ export default function Home() {
 
       {/* Lista de Cards de Avaliação */}
       <div>
-        <EvaluationCard id={1} avaliado="Vinicius Lino" avaliador="Thiago Kaijyama" data="24/09/2024" />
-        <EvaluationCard id={2} avaliado="Vinicius Lino" avaliador="Thiago Kaijyama" data="24/09/2024" />
-        <EvaluationCard id={3} avaliado="Vinicius Lino" avaliador="Thiago Kaijyama" data="24/09/2024" />
-        <EvaluationCard id={4} avaliado="Vinicius Lino" avaliador="Thiago Kaijyama" data="24/09/2024" />
+        <EvaluationCard
+          id={1}
+          avaliado="Vinicius Lino"
+          avaliador="Thiago Kaijyama"
+          data="24/09/2024"
+        />
+        <EvaluationCard
+          id={2}
+          avaliado="Vinicius Lino"
+          avaliador="Thiago Kaijyama"
+          data="24/09/2024"
+        />
+        <EvaluationCard
+          id={3}
+          avaliado="Vinicius Lino"
+          avaliador="Thiago Kaijyama"
+          data="24/09/2024"
+        />
+        <EvaluationCard
+          id={4}
+          avaliado="Vinicius Lino"
+          avaliador="Thiago Kaijyama"
+          data="24/09/2024"
+        />
       </div>
 
       {/* Botão de Criar Avaliação */}

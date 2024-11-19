@@ -1,8 +1,8 @@
 // src/components/ObservationModal.tsx
-import React from 'react';
-import { Modal, Box, Typography, IconButton } from '@mui/material';
-import { Close as CloseIcon } from '@mui/icons-material'; // Ícone de fechar (X)
-import ObservationCard from '@/components/Observation/observationCard'; // Ajuste o caminho conforme necessário
+import React from "react";
+import { Modal, Box, Typography, IconButton } from "@mui/material";
+import { Close as CloseIcon } from "@mui/icons-material"; // Ícone de fechar (X)
+import ObservationCard from "@/components/Observation/observationCard"; // Ajuste o caminho conforme necessário
 
 // Define o tipo para uma observação
 interface Observation {
@@ -29,25 +29,25 @@ const ObservationModal: React.FC<ObservationModalProps> = ({
     <Modal open={open} onClose={onClose} aria-labelledby="observacoes-title">
       <Box
         sx={{
-          position: 'absolute',
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
+          position: "absolute",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
           width: 600,
-          bgcolor: 'background.paper',
+          bgcolor: "background.paper",
           boxShadow: 24,
           p: 4,
-          borderRadius: '8px',
+          borderRadius: "8px",
         }}
       >
         {/* Botão de Fechar (X) */}
         <IconButton
           onClick={onClose}
           sx={{
-            position: 'absolute',
+            position: "absolute",
             top: 8,
             right: 8,
-            color: 'black',
+            color: "black",
           }}
         >
           <CloseIcon />
