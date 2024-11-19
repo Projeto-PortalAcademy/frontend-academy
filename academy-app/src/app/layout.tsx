@@ -1,4 +1,4 @@
-"use client"; // Torna o componente um Client Component
+"use client";
 
 import "./globals.css";
 import React from "react";
@@ -13,12 +13,12 @@ export default function RootLayout({
 }>) {
   const pathname = usePathname();
 
-  // Verifica se a rota é "/login" e ignora o layout padrão
-  const isLoginPage = pathname === "/login";
+  // Verifica se a rota é "/" e ignora o layout padrão
+  const isLoginPage = pathname === "/";
 
   if (isLoginPage) {
     return (
-      <html lang="en">
+      <html lang="pt-br">
         <body>{children}</body>
       </html>
     );
