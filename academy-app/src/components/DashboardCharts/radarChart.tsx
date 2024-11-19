@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import React from "react";
 import {
   Chart as ChartJS,
   RadialLinearScale,
@@ -11,6 +12,8 @@ import {
   Legend,
 } from "chart.js";
 import { Radar } from "react-chartjs-2";
+} from "chart.js";
+import { Radar } from "react-chartjs-2";
 
 ChartJS.register(
   RadialLinearScale,
@@ -18,6 +21,7 @@ ChartJS.register(
   LineElement,
   Filler,
   Tooltip,
+  Legend,
   Legend,
 );
 
@@ -29,14 +33,24 @@ const data = {
     "Data Engineering",
     "Cloud Computing",
     "DevOps",
+    "Data Science",
+    "Backend",
+    "Frontend",
+    "Data Engineering",
+    "Cloud Computing",
+    "DevOps",
   ],
   datasets: [
     {
       label: "Habilidades",
+      label: "Habilidades",
       data: [70, 80, 60, 50, 40, 30],
       backgroundColor: "rgba(0, 123, 255, 0.2)",
       borderColor: "rgba(0, 123, 255, 1)",
+      backgroundColor: "rgba(0, 123, 255, 0.2)",
+      borderColor: "rgba(0, 123, 255, 1)",
       borderWidth: 2,
+      pointBackgroundColor: "rgba(0, 123, 255, 1)",
       pointBackgroundColor: "rgba(0, 123, 255, 1)",
     },
   ],
