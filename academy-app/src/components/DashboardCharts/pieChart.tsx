@@ -1,7 +1,5 @@
 "use client";
-"use client";
 
-import React from "react";
 import React from "react";
 
 const CustomPieChart: React.FC = () => {
@@ -12,16 +10,9 @@ const CustomPieChart: React.FC = () => {
   const circumference = 2 * Math.PI * 50;
   const offsets = data.map((value, index) =>
     data.slice(0, index).reduce((acc, v) => acc + (v / 100) * circumference, 0),
-    data.slice(0, index).reduce((acc, v) => acc + (v / 100) * circumference, 0),
   );
 
   return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 120 120"
-      style={{ overflow: "visible" }}
-    >
     <svg
       width={size}
       height={size}
@@ -48,13 +39,6 @@ const CustomPieChart: React.FC = () => {
         dominantBaseline="middle"
         fontSize="5"
       >
-      <text
-        x="50%"
-        y="50%"
-        textAnchor="middle"
-        dominantBaseline="middle"
-        fontSize="5"
-      >
         {`Presença: ${data[0]}%`}
       </text>
     </svg>
@@ -62,4 +46,3 @@ const CustomPieChart: React.FC = () => {
 };
 
 export default CustomPieChart;
-
