@@ -1,14 +1,19 @@
 'use client'
 
-import React, {useState} from "react";
+import React, { useState } from "react";
 import AttendanceTable from "@/components/PresenceTable/PresenceTable";
 
-const Frequencia = () => {
+interface Student {
+  id: number;
+  name: string;
+  status: "P" | "F" | "A";
+}
 
-  const [students, setStudents] = useState([
-    { id: 1, name: 'João', status: 'P' },
-    { id: 2, name: 'Maria', status: 'F' },
-    { id: 3, name: 'Ana', status: 'A' },
+const Frequencia = () => {
+  const [students, setStudents] = useState<Student[]>([
+    { id: 1, name: "João", status: "P" },
+    { id: 2, name: "Maria", status: "F" },
+    { id: 3, name: "Ana", status: "A" },
   ]);
 
   const toggleStatus = (id: number) => {
@@ -18,11 +23,11 @@ const Frequencia = () => {
           ? {
               ...student,
               status:
-                student.status === 'P'
-                  ? 'F'
-                  : student.status === 'F'
-                  ? 'A'
-                  : 'P',
+                student.status === "P"
+                  ? "F"
+                  : student.status === "F"
+                  ? "A"
+                  : "P",
             }
           : student
       )

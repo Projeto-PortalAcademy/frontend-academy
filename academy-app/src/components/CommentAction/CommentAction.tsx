@@ -17,16 +17,14 @@ const CommentAction: React.FC = () => {
 
   return (
     <div>
-      {/* Ícone clicável para abrir o modal */}
       <div
         onClick={handleOpenModal}
         className="cursor-pointer inline-block"
-        style={{ width: "76px", height: "76px" }} // Definindo o tamanho da div igual ao do SVG
+        style={{ width: "76px", height: "76px" }}
       >
         <IconComments />
       </div>
 
-      {/* Modal de adicionar observação */}
       <AddObservationModal isOpen={isModalOpen} onClose={handleCloseModal} />
     </div>
   );

@@ -1,6 +1,14 @@
-import React from "react";
+import React, { MouseEvent, FC, CSSProperties } from "react";
 
-const IconButton = ({ texto, Icone, onClick, disableHover = false, style = {} }) => {
+interface IconButtonProps {
+  texto: string;
+  Icone?: React.ComponentType<{ size?: number; style?: React.CSSProperties }>;
+  onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
+  disableHover?: boolean;
+  style?: CSSProperties;
+}
+
+const IconButton: FC<IconButtonProps> = ({ texto, Icone, onClick, disableHover = false, style = {} }) => {
   return (
     <button
       onClick={onClick}

@@ -1,28 +1,35 @@
-import type { Metadata } from "next";
+"use client";
+
 import "./globals.css";
 import React from "react";
+import { usePathname } from "next/navigation";
 import Sidebar from "../components/Sidebar/sidebar";
 import Header from "../components/Header/header";
-
-export const metadata: Metadata = {
-  title: "App Academy",
-  description: "Portal do Academy 2RP",
-};
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const pathname = usePathname();
+
+  // Verifica se a rota é "/" e ignora o layout padrão
+  const isLoginPage = pathname === "/";
+
+  if (isLoginPage) {
+    return (
+      <html lang="pt-br">
+        <body>{children}</body>
+      </html>
+    );
+  }
+
   return (
-    <html lang="en">
+    <html lang="pt-br">
       <body className="flex h-screen">
-        {/* Sidebar em todas as páginas */}
         <Sidebar />
         <div className="flex flex-col flex-grow">
-          {/* Header fixado no topo */}
           <Header />
-          {/* Conteúdo principal da página */}
           <div className="flex-grow overflow-auto p-4">{children}</div>
         </div>
       </body>

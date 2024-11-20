@@ -1,15 +1,12 @@
-"use client"
 import Image from "next/image";
-import { useRouter } from "next/navigation";
-import bgLogin from "../../public/images/bg-login.png"
+import bgLogin from "../../../public/images/bg-login.png";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 
 export default function LoginPage() {
-  const router = useRouter();
-
   return (
     <div className="relative flex w-full items-center justify-center bg-gradient-to-br from-blue-900 via-blue-800 to-blue-600 h-screen">
+      {/* Background Section */}
       <div className="absolute inset-0">
         <Image
           src={bgLogin}
@@ -20,6 +17,7 @@ export default function LoginPage() {
         />
       </div>
 
+      {/* Login Form */}
       <div className=" m-6 relative z-10 flex w-2/6 items-center justify-center p-6 md:p-12 bg-white bg-opacity-85 shadow-lg rounded-3xl">
         <div className="w-full">
           <h2 className="text-3xl font-bold text-blue-900">Bem-vindo!</h2>
@@ -71,10 +69,6 @@ export default function LoginPage() {
             <button
               type="submit"
               className="mt-6 w-full rounded-md bg-blue-600 py-2 text-white hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-              onClick={(event) => {
-                event.preventDefault();
-                router.push('/avaliacao'); // Navega para a rota "/avaliacao"
-              }}
             >
               Entrar
             </button>
