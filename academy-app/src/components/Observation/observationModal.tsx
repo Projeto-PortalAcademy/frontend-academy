@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { Modal, Box, Typography, IconButton, Button } from "@mui/material";
-import { Close as CloseIcon } from "@mui/icons-material"; // Ícone de fechar (X)
-import ObservationCard from "@/components/Observation/observationCard"; // Ajuste o caminho conforme necessário
-import AddObservationModal from "@/components/AddObservationModal/AddObservationModal"; // Importa o modal de adicionar observação
+import { Close as CloseIcon } from "@mui/icons-material";
+import ObservationCard from "@/components/Observation/observationCard";
+import AddObservationModal from "@/components/AddObservationModal/AddObservationModal";
 
-// Define o tipo para uma observação
 interface Observation {
   id: number;
   title: string;
@@ -16,6 +15,7 @@ interface ObservationModalProps {
   open: boolean;
   onClose: () => void;
   observations: Observation[];
+  setObservations: React.Dispatch<React.SetStateAction<Observation[]>>;
   onDelete: (id: number) => void;
 }
 
@@ -23,6 +23,7 @@ const ObservationModal: React.FC<ObservationModalProps> = ({
   open,
   onClose,
   observations,
+  setObservations,
   onDelete,
 }) => {
   const [isAddObservationModalOpen, setIsAddObservationModalOpen] =
@@ -36,9 +37,18 @@ const ObservationModal: React.FC<ObservationModalProps> = ({
     setIsAddObservationModalOpen(false);
   };
 
+  const handleAddObservation = (newObservation: Omit<Observation, "id">) => {
+    const observationWithId = {
+      id: observations.length + 1,
+      ...newObservation,
+    };
+
+    setObservations((prev) => [...prev, observationWithId]);
+    handleCloseAddObservationModal();
+  };
+
   return (
     <>
-      {/* Modal de Observações */}
       <Modal open={open} onClose={onClose} aria-labelledby="observacoes-title">
         <Box
           sx={{
@@ -51,10 +61,9 @@ const ObservationModal: React.FC<ObservationModalProps> = ({
             boxShadow: 24,
             p: 4,
             borderRadius: "8px",
-            zIndex: 1000, // Garante um z-index mais baixo que o outro modal
+            zIndex: 1300, // Prioridade para o modal principal
           }}
         >
-          {/* Botão de Fechar (X) */}
           <IconButton
             onClick={onClose}
             sx={{
@@ -71,7 +80,6 @@ const ObservationModal: React.FC<ObservationModalProps> = ({
             Observações
           </Typography>
 
-          {/* Botão Adicionar */}
           <Button
             variant="contained"
             color="primary"
@@ -100,20 +108,11 @@ const ObservationModal: React.FC<ObservationModalProps> = ({
         </Box>
       </Modal>
 
-      {/* Modal de Adicionar Observação */}
-      <Modal
-        open={isAddObservationModalOpen}
+      <AddObservationModal
+        isOpen={isAddObservationModalOpen}
         onClose={handleCloseAddObservationModal}
-        aria-labelledby="add-observation-title"
-        sx={{ zIndex: 1500 }} // Garante um z-index maior que o modal anterior
-      >
-        <div>
-          <AddObservationModal
-            isOpen={isAddObservationModalOpen}
-            onClose={handleCloseAddObservationModal}
-          />
-        </div>
-      </Modal>
+        onAddObservation={handleAddObservation}
+      />
     </>
   );
 };
