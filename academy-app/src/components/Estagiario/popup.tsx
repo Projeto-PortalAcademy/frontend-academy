@@ -9,7 +9,14 @@ interface PopUpProps {
   placeholder?: string;
 }
 
-const PopUp: FC<PopUpProps> = ({ titulo, valor, onChange, onAdd, onClose, placeholder }) => {
+const PopUp: FC<PopUpProps> = ({
+  titulo,
+  valor,
+  onChange,
+  onAdd,
+  onClose,
+  placeholder,
+}) => {
   return (
     <div
       style={{

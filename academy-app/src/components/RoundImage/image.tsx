@@ -8,7 +8,11 @@ interface RoundImageProps {
   size?: number;
 }
 
-const RoundImage: React.FC<RoundImageProps> = ({ src, alt = "foto aqui", size = 100 }) => {
+const RoundImage: React.FC<RoundImageProps> = ({
+  src,
+  alt = "foto aqui",
+  size = 100,
+}) => {
   const [imageError, setImageError] = useState(false);
 
   return (

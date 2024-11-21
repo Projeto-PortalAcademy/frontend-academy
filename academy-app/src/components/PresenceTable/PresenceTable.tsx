@@ -21,7 +21,7 @@ const AttendanceTable: React.FC<AttendanceTableProps> = ({
   onAddComment, // Recebe a função onAddComment
 }) => {
   const [selectedDate, setSelectedDate] = useState(
-    new Date().toISOString().slice(0, 10)
+    new Date().toISOString().slice(0, 10),
   );
 
   const handleDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -69,7 +69,9 @@ const AttendanceTable: React.FC<AttendanceTableProps> = ({
                   }}
                   texto="Ver Histórico"
                   Icone={FaHistory}
-                  onClick={() => alert(`Abrindo histórico de ${student.name}...`)}
+                  onClick={() =>
+                    alert(`Abrindo histórico de ${student.name}...`)
+                  }
                 />
               </td>
               <td className="px-4 py-2 items-center">

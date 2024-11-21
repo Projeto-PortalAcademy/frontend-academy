@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import React, { useState } from "react";
 import AttendanceTable from "@/components/PresenceTable/PresenceTable";
@@ -26,11 +26,11 @@ const Frequencia = () => {
                 student.status === "P"
                   ? "F"
                   : student.status === "F"
-                  ? "A"
-                  : "P",
+                    ? "A"
+                    : "P",
             }
-          : student
-      )
+          : student,
+      ),
     );
   };
 

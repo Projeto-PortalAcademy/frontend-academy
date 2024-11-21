@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import bgLogin from "../../public/images/bg-login2.jpeg";
@@ -30,7 +30,10 @@ export default function LoginPage() {
             Faça login para acessar sua conta
           </p>
           <form className="mt-6">
-            <label htmlFor="email" className="text-sm font-medium text-gray-700">
+            <label
+              htmlFor="email"
+              className="text-sm font-medium text-gray-700"
+            >
               E-mail
             </label>
             <input
@@ -40,7 +43,10 @@ export default function LoginPage() {
               placeholder="Digite seu e-mail"
             />
 
-            <label htmlFor="password" className="mt-4 text-sm font-medium text-gray-700">
+            <label
+              htmlFor="password"
+              className="mt-4 text-sm font-medium text-gray-700"
+            >
               Senha
             </label>
             <input
@@ -63,10 +69,7 @@ export default function LoginPage() {
                 Lembrar de mim
               </label>
             </div>
-            <a
-              href="#"
-              className="text-sm text-blue-600 hover:underline"
-            >
+            <a href="#" className="text-sm text-blue-600 hover:underline">
               Esqueci minha senha
             </a>
 
@@ -75,7 +78,7 @@ export default function LoginPage() {
               className="mt-6 w-full rounded-md bg-blue-600 py-2 text-white hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
               onClick={(event) => {
                 event.preventDefault();
-                router.push('/avaliacao'); // Navega para a rota "/avaliacao"
+                router.push("/avaliacao"); // Navega para a rota "/avaliacao"
               }}
             >
               Entrar
@@ -87,10 +90,7 @@ export default function LoginPage() {
               type="button"
               className="mb-2 w-full flex items-center justify-center rounded-md border bg-white py-2 text-gray-600 hover:bg-gray-50"
             >
-              <FcGoogle 
-                size={20}
-                className="mr-2"
-              />
+              <FcGoogle size={20} className="mr-2" />
               Continuar com o Google
             </button>
 
@@ -98,10 +98,7 @@ export default function LoginPage() {
               type="button"
               className="w-full flex items-center justify-center rounded-md border bg-white py-2 text-gray-600 hover:bg-gray-50"
             >
-              <FaGithub
-                size={20}
-                className="mr-2"
-              />
+              <FaGithub size={20} className="mr-2" />
               Continuar com o GitHub
             </button>
           </div>
