@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import AttendanceTable from "@/components/PresenceTable/PresenceTable";
+import AddObservationModal from "@/components/AddObservationModal/AddObservationModal";
 
 interface Student {
   id: number;
@@ -22,6 +23,12 @@ const Frequencia = () => {
     { id: 9, name: "Sérgio Nascimento", status: "A" },
   ]);
 
+  const [isAddObservationModalOpen, setIsAddObservationModalOpen] =
+    useState(false);
+  const [selectedStudentId, setSelectedStudentId] = useState<number | null>(
+    null
+  );
+
   const toggleStatus = (id: number) => {
     setStudents((prevStudents) =>
       prevStudents.map((student) =>
@@ -32,16 +39,22 @@ const Frequencia = () => {
                 student.status === "P"
                   ? "F"
                   : student.status === "F"
-                    ? "A"
-                    : "P",
+                  ? "A"
+                  : "P",
             }
-          : student,
-      ),
+          : student
+      )
     );
   };
 
   const handleAddComment = (id: number) => {
-    alert(`Adicionar comentário para o aluno com ID: ${id}`);
+    setSelectedStudentId(id); // Armazena o ID do aluno selecionado
+    setIsAddObservationModalOpen(true); // Abre o modal
+  };
+
+  const handleCloseAddObservationModal = () => {
+    setIsAddObservationModalOpen(false); // Fecha o modal
+    setSelectedStudentId(null); // Reseta o ID do aluno selecionado
   };
 
   return (
@@ -51,6 +64,10 @@ const Frequencia = () => {
         students={students}
         onToggleStatus={toggleStatus}
         onAddComment={handleAddComment}
+      />
+      <AddObservationModal
+        isOpen={isAddObservationModalOpen}
+        onClose={handleCloseAddObservationModal}
       />
     </div>
   );
