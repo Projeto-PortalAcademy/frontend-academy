@@ -1,71 +1,89 @@
-import React from "react";
+import React, { useState } from "react";
+import { Modal, Box, Typography, Button, TextField } from "@mui/material";
 
 interface AddObservationModalProps {
   isOpen: boolean;
   onClose: () => void;
+  onAddObservation: (observation: { title: string; description: string; date: string }) => void;
 }
 
 const AddObservationModal: React.FC<AddObservationModalProps> = ({
   isOpen,
   onClose,
+  onAddObservation,
 }) => {
-  if (!isOpen) return null;
+  const [date, setDate] = useState("");
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+
+  const handleAdd = () => {
+    onAddObservation({ title, description, date });
+    setDate("");
+    setTitle("");
+    setDescription("");
+  };
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-      <div className="bg-white w-96 p-6 rounded-lg shadow-lg">
-        <div className="flex justify-between items-center border-b pb-2 mb-4">
-          <h2 className="text-lg font-bold text-blue-800">
-            Adicionar observação
-          </h2>
-          <button
-            onClick={onClose}
-            className="text-gray-500 hover:text-gray-700"
-          >
-            &times;
-          </button>
-        </div>
+    <Modal
+      open={isOpen}
+      onClose={onClose}
+      aria-labelledby="add-observation-title"
+      sx={{
+        zIndex: 1400, // Garantir que este modal esteja na frente
+      }}
+    >
+      <Box
+        sx={{
+          position: "absolute",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+          width: 400,
+          bgcolor: "background.paper",
+          boxShadow: 24,
+          p: 4,
+          borderRadius: "8px",
+        }}
+      >
+        <Typography id="add-observation-title" variant="h6" mb={2}>
+          Adicionar Observação
+        </Typography>
 
-        <form>
-          <div className="mb-4">
-            <label className="block text-gray-700 font-bold">Data:</label>
-            <input
-              type="text"
-              value="XX/XX/XXXX"
-              className="w-full mt-1 p-2 border rounded bg-gray-100"
-              disabled
-            />
-          </div>
-          <div className="mb-4">
-            <label className="block text-gray-700 font-bold">Título:</label>
-            <input
-              type="text"
-              value="Atraso"
-              className="w-full mt-1 p-2 border rounded bg-gray-100"
-              disabled
-            />
-          </div>
-          <div className="mb-6">
-            <label className="block text-gray-700 font-bold">Descrição:</label>
-            <textarea
-              className="w-full mt-1 p-2 border rounded bg-gray-100"
-              rows={4}
-              disabled
-              defaultValue="Chegou atrasado pois teve que ir no PoupaTempo retirar documentos"
-            />
-          </div>
+        <TextField
+          label="Data"
+          fullWidth
+          margin="normal"
+          value={date}
+          onChange={(e) => setDate(e.target.value)}
+        />
+        <TextField
+          label="Título"
+          fullWidth
+          margin="normal"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+        />
+        <TextField
+          label="Descrição"
+          fullWidth
+          margin="normal"
+          multiline
+          rows={4}
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+        />
 
-          <div className="flex justify-center">
-            <button
-              type="button"
-              className="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 transition"
-            >
-              Adicionar
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
+        <Button
+          variant="contained"
+          color="primary"
+          fullWidth
+          sx={{ mt: 2 }}
+          onClick={handleAdd}
+        >
+          Adicionar
+        </Button>
+      </Box>
+    </Modal>
   );
 };
 
