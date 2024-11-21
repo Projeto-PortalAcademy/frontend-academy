@@ -11,9 +11,15 @@ interface Student {
 
 const Frequencia = () => {
   const [students, setStudents] = useState<Student[]>([
-    { id: 1, name: "João", status: "P" },
-    { id: 2, name: "Maria", status: "F" },
-    { id: 3, name: "Ana", status: "A" },
+    { id: 1, name: "Camila Yukari Yatabe", status: "P" },
+    { id: 2, name: "Vinicius de Morais Lino", status: "F" },
+    { id: 3, name: "Vinicius Antunes", status: "A" },
+    { id: 4, name: "Thiago Tavares Silva", status: "P" },
+    { id: 5, name: "Guilherme Martins", status: "F" },
+    { id: 6, name: "Matheus Pajé da Mata", status: "A" },
+    { id: 7, name: "Thiago Tavares Silva", status: "P" },
+    { id: 8, name: "Felipe Camargo", status: "F" },
+    { id: 9, name: "Sérgio Nascimento", status: "A" },
   ]);
 
   const toggleStatus = (id: number) => {
