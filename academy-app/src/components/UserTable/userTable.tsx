@@ -16,16 +16,26 @@ interface UserTableProps {
   onViewPage: (id: number) => void;
 }
 
-const UserTable: React.FC<UserTableProps> = ({ users, onDelete, onViewPage }) => {
+const UserTable: React.FC<UserTableProps> = ({
+  users,
+  onDelete,
+  onViewPage,
+}) => {
   return (
     <div className="container mx-auto p-4">
       <table className="table-auto w-full border-collapse border border-gray-200">
         <thead>
           <tr className="bg-gray-100">
             <th className="border border-gray-200 px-4 py-2 text-left">Nome</th>
-            <th className="border border-gray-200 px-4 py-2 text-left">E-mail</th>
-            <th className="border border-gray-200 px-4 py-2 text-left">Função</th>
-            <th className="border border-gray-200 px-4 py-2 text-center">Ações</th>
+            <th className="border border-gray-200 px-4 py-2 text-left">
+              E-mail
+            </th>
+            <th className="border border-gray-200 px-4 py-2 text-left">
+              Função
+            </th>
+            <th className="border border-gray-200 px-4 py-2 text-center">
+              Ações
+            </th>
           </tr>
         </thead>
         <tbody>

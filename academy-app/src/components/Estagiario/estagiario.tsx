@@ -29,14 +29,20 @@ interface EstagiarioProps {
   imagem: string;
 }
 
-const Estagiario: React.FC<EstagiarioProps> = ({ nome, area, squad, imagem }) => {
+const Estagiario: React.FC<EstagiarioProps> = ({
+  nome,
+  area,
+  squad,
+  imagem,
+}) => {
   const [softSkills, setSoftSkills] = useState<SkillOrTech[]>([]);
   const [tecnologiasList, setTecnologiasList] = useState<SkillOrTech[]>([]);
   const [novaSkill, setNovaSkill] = useState<string>("");
   const [novaTecnologia, setNovaTecnologia] = useState<string>("");
   const [isSkillPopupOpen, setIsSkillPopupOpen] = useState<boolean>(false);
   const [isTechPopupOpen, setIsTechPopupOpen] = useState<boolean>(false);
-  const [isObservationModalOpen, setIsObservationModalOpen] = useState<boolean>(false);
+  const [isObservationModalOpen, setIsObservationModalOpen] =
+    useState<boolean>(false);
   const [observations, setObservations] = useState<Observation[]>([
     {
       id: 1,
@@ -165,7 +171,9 @@ const Estagiario: React.FC<EstagiarioProps> = ({ nome, area, squad, imagem }) =>
         <PopUp
           titulo="Adicionar Soft Skill"
           valor={novaSkill}
-          onChange={(e: ChangeEvent<HTMLInputElement>) => setNovaSkill(e.target.value)}
+          onChange={(e: ChangeEvent<HTMLInputElement>) =>
+            setNovaSkill(e.target.value)
+          }
           onAdd={handleAddSkill}
           onClose={() => setIsSkillPopupOpen(false)}
           placeholder="Digite a Soft Skill"
@@ -224,7 +232,9 @@ const Estagiario: React.FC<EstagiarioProps> = ({ nome, area, squad, imagem }) =>
         <PopUp
           titulo="Adicionar Tecnologia"
           valor={novaTecnologia}
-          onChange={(e: ChangeEvent<HTMLInputElement>) => setNovaTecnologia(e.target.value)}
+          onChange={(e: ChangeEvent<HTMLInputElement>) =>
+            setNovaTecnologia(e.target.value)
+          }
           onAdd={handleAddTecnologia}
           onClose={() => setIsTechPopupOpen(false)}
           placeholder="Digite a Tecnologia"

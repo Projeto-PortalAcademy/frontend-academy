@@ -8,13 +8,7 @@ export default function LoginPage() {
     <div className="relative flex w-full items-center justify-center bg-gradient-to-br from-blue-900 via-blue-800 to-blue-600 h-screen">
       {/* Background Section */}
       <div className="absolute inset-0">
-        <Image
-          src={bgLogin}
-          alt="Background"
-          quality={100}
-          fill
-          priority
-        />
+        <Image src={bgLogin} alt="Background" quality={100} fill priority />
       </div>
 
       {/* Login Form */}
@@ -25,7 +19,10 @@ export default function LoginPage() {
             Faça login para acessar sua conta
           </p>
           <form className="mt-6">
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+            <label
+              htmlFor="email"
+              className="block text-sm font-medium text-gray-700"
+            >
               E-mail
             </label>
             <input
@@ -35,7 +32,10 @@ export default function LoginPage() {
               placeholder="Digite seu e-mail"
             />
 
-            <label htmlFor="password" className="mt-4 block text-sm font-medium text-gray-700">
+            <label
+              htmlFor="password"
+              className="mt-4 block text-sm font-medium text-gray-700"
+            >
               Senha
             </label>
             <input
@@ -45,26 +45,22 @@ export default function LoginPage() {
               placeholder="Digite sua senha"
             />
 
-            
-              <div className="mt-4 flex items-center">
-                <input
-                  id="remember-me"
-                  type="checkbox"
-                  className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
-                />
-                <label
-                  htmlFor="remember-me"
-                  className="ml-2 text-sm text-gray-600"
-                >
-                  Lembrar de mim
-                </label>
-              </div>
-              <a
-                href="#"
-                className="text-sm text-blue-600 hover:underline"
+            <div className="mt-4 flex items-center">
+              <input
+                id="remember-me"
+                type="checkbox"
+                className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+              />
+              <label
+                htmlFor="remember-me"
+                className="ml-2 text-sm text-gray-600"
               >
-                Esqueci minha senha
-              </a>
+                Lembrar de mim
+              </label>
+            </div>
+            <a href="#" className="text-sm text-blue-600 hover:underline">
+              Esqueci minha senha
+            </a>
 
             <button
               type="submit"
@@ -79,10 +75,7 @@ export default function LoginPage() {
               type="button"
               className="mb-2 w-full flex items-center justify-center rounded-md border bg-white py-2 text-gray-600 hover:bg-gray-50"
             >
-              <FcGoogle 
-                size={20}
-                className="mr-2"
-              />
+              <FcGoogle size={20} className="mr-2" />
               Continuar com o Google
             </button>
 
@@ -90,10 +83,7 @@ export default function LoginPage() {
               type="button"
               className="w-full flex items-center justify-center rounded-md border bg-white py-2 text-gray-600 hover:bg-gray-50"
             >
-              <FaGithub
-                size={20}
-                className="mr-2"
-              />
+              <FaGithub size={20} className="mr-2" />
               Continuar com o GitHub
             </button>
           </div>

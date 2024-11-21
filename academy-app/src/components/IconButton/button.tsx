@@ -8,7 +8,13 @@ interface IconButtonProps {
   style?: CSSProperties;
 }
 
-const IconButton: FC<IconButtonProps> = ({ texto, Icone, onClick, disableHover = false, style = {} }) => {
+const IconButton: FC<IconButtonProps> = ({
+  texto,
+  Icone,
+  onClick,
+  disableHover = false,
+  style = {},
+}) => {
   return (
     <button
       onClick={onClick}

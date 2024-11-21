@@ -19,7 +19,7 @@ ChartJS.register(
   BarElement,
   Title,
   Tooltip,
-  Legend
+  Legend,
 );
 
 const PresenceChart: React.FC = () => {

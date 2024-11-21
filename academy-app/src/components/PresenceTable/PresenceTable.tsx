@@ -21,7 +21,7 @@ const AttendanceTable: React.FC<AttendanceTableProps> = ({
   onAddComment, // Recebe a função onAddComment
 }) => {
   const [selectedDate, setSelectedDate] = useState(
-    new Date().toISOString().slice(0, 10)
+    new Date().toISOString().slice(0, 10),
   );
 
   const handleDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -61,20 +61,18 @@ const AttendanceTable: React.FC<AttendanceTableProps> = ({
                   onClick={() => onToggleStatus(student.id)}
                 />
               </td>
-              <td className="px-4 py-2 text-center flex justify-center items-center">
-        
-              </td>
+              <td className="px-4 py-2 text-center flex justify-center items-center"></td>
               <td className="px-4 py-2 items-center">
-              <IconButton
-                style={{
-                  backgroundColor: "transparent",
-                  boxShadow: "none",
-                }}
-                texto=""
-                Icone={FaCommentAlt}
-                disableHover={true}
-                onClick={() => onAddComment(student.id)}
-              />
+                <IconButton
+                  style={{
+                    backgroundColor: "transparent",
+                    boxShadow: "none",
+                  }}
+                  texto=""
+                  Icone={FaCommentAlt}
+                  disableHover={true}
+                  onClick={() => onAddComment(student.id)}
+                />
               </td>
             </tr>
           ))}
