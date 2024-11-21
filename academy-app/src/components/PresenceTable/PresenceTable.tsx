@@ -62,26 +62,19 @@ const AttendanceTable: React.FC<AttendanceTableProps> = ({
                 />
               </td>
               <td className="px-4 py-2 text-center flex justify-center items-center">
-                <IconButton
-                  style={{
-                    boxShadow: "",
-                    fontWeight: "regular",
-                  }}
-                  texto="Ver Histórico"
-                  Icone={FaHistory}
-                  onClick={() => alert(`Abrindo histórico de ${student.name}...`)}
-                />
+        
               </td>
               <td className="px-4 py-2 items-center">
-                <IconButton
-                  style={{
-                    boxShadow: "",
-                  }}
-                  texto=""
-                  Icone={FaCommentAlt}
-                  disableHover={true}
-                  onClick={() => onAddComment(student.id)}
-                />
+              <IconButton
+                style={{
+                  backgroundColor: "transparent",
+                  boxShadow: "none",
+                }}
+                texto=""
+                Icone={FaCommentAlt}
+                disableHover={true}
+                onClick={() => onAddComment(student.id)}
+              />
               </td>
             </tr>
           ))}
