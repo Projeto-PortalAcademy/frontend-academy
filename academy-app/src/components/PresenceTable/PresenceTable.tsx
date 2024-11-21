@@ -32,7 +32,7 @@ const AttendanceTable: React.FC<AttendanceTableProps> = ({
     <div className="container mx-auto p-4">
       <div className="flex items-center mb-6 space-x-2">
         <div>
-          <span className="text-lg font-bold:">Registrar dia:</span>
+          <span className="text-lg font-bold mr-4">Registrar dia:</span>
           <input
             type="date"
             value={selectedDate}
