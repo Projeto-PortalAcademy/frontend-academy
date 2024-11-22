@@ -43,7 +43,8 @@ const data = {
 };
 
 const options = {
-  responsive: true,
+  responsive: false, // Desabilita responsividade
+  maintainAspectRatio: false, // Permite ajustar proporções personalizadas
   scales: {
     r: {
       angleLines: { display: true },
@@ -57,7 +58,14 @@ const options = {
 };
 
 const RadarChart: React.FC = () => {
-  return <Radar data={data} options={options} />;
+  return (
+    <Radar
+      data={data}
+      options={options}
+      width={500} // Largura personalizada
+      height={500} // Altura personalizada
+    />
+  );
 };
 
 export default RadarChart;
