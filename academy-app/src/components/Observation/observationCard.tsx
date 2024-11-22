@@ -1,6 +1,13 @@
 // src/components/ObservationCard.tsx
-import React from 'react';
-import { Card, CardContent, CardActions, Typography, Button, Box } from '@mui/material';
+import React from "react";
+import {
+  Card,
+  CardContent,
+  CardActions,
+  Typography,
+  Button,
+  Box,
+} from "@mui/material";
 
 interface ObservationCardProps {
   title: string;
@@ -19,9 +26,9 @@ const ObservationCard: React.FC<ObservationCardProps> = ({
     <Card
       sx={{
         maxWidth: 600,
-        margin: '8px auto',
-        boxShadow: '0px 2px 8px rgba(0, 0, 0, 0.1)',
-        borderRadius: '8px',
+        margin: "8px auto",
+        boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.1)",
+        borderRadius: "8px",
       }}
     >
       <CardContent>
@@ -38,11 +45,11 @@ const ObservationCard: React.FC<ObservationCardProps> = ({
         </Typography>
       </CardContent>
       <CardActions>
-        <Button 
-          variant="contained" 
-          color="error" 
-          onClick={onDelete} 
-          sx={{ marginLeft: 'auto' }}
+        <Button
+          variant="contained"
+          color="error"
+          onClick={onDelete}
+          sx={{ marginLeft: "auto" }}
         >
           Excluir
         </Button>

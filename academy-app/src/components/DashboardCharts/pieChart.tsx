@@ -1,19 +1,24 @@
-'use client';
+"use client";
 
-import React from 'react';
+import React from "react";
 
 const CustomPieChart: React.FC = () => {
   const size = 200; // Aumenta o tamanho desejado aqui
   const data = [80, 20]; // Presença e Faltas
   const colors = ['#6CA0DC', '#D9534F']; // Azul e Vermelho
 
-  const circumference = 2 * Math.PI * 50; // Circunferência do círculo base
+  const circumference = 2 * Math.PI * 50;
   const offsets = data.map((value, index) =>
-    data.slice(0, index).reduce((acc, v) => acc + (v / 100) * circumference, 0)
+    data.slice(0, index).reduce((acc, v) => acc + (v / 100) * circumference, 0),
   );
 
   return (
-    <svg width={size} height={size} viewBox="0 0 120 120" style={{ overflow: 'visible' }}>
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 120 120"
+      style={{ overflow: "visible" }}
+    >
       {data.map((value, index) => (
         <circle
           key={index}
@@ -27,7 +32,13 @@ const CustomPieChart: React.FC = () => {
           strokeDashoffset={-offsets[index]}
         />
       ))}
-      <text x="50%" y="50%" textAnchor="middle" dominantBaseline="middle" fontSize="5">
+      <text
+        x="50%"
+        y="50%"
+        textAnchor="middle"
+        dominantBaseline="middle"
+        fontSize="5"
+      >
         {`Presença: ${data[0]}%`}
       </text>
     </svg>

@@ -1,6 +1,15 @@
-import React from "react";
+import React, { ChangeEvent, FC } from "react";
 
-const PopUp = ({ titulo, valor, onChange, onAdd, onClose, placeholder }) => {
+interface PopUpProps {
+  titulo: string;
+  valor: string;
+  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+  onAdd: () => void;
+  onClose: () => void;
+  placeholder?: string;
+}
+
+const PopUp: FC<PopUpProps> = ({ titulo, valor, onChange, onAdd, onClose, placeholder }) => {
   return (
     <div
       style={{

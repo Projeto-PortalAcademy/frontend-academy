@@ -1,40 +1,67 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, ChangeEvent } from "react";
 import IconButton from "@/components/IconButton/button";
 import { AiOutlineFileText, AiOutlinePlus } from "react-icons/ai";
 import RoundImage from "../RoundImage/image";
 import PopUp from "./popup";
-import ObservationModal from "@/components/Observation/observationModal"; // Ajuste o caminho conforme necessário
+import ObservationModal from "@/components/Observation/observationModal";
 
 const skill_colors = ["#BE5989", "#7DA6C3", "#EEF5A0", "#8EC594", "#D398D4"];
 const tech_colors = ["#8EC594", "#D398D4", "#EEF5A0", "#BE5989", "#7DA6C3"];
 
-const Estagiario = ({ nome, area, squad, imagem }) => {
-  const [softSkills, setSoftSkills] = useState([]);
-  const [tecnologiasList, setTecnologiasList] = useState([]);
-  const [novaSkill, setNovaSkill] = useState("");
-  const [novaTecnologia, setNovaTecnologia] = useState("");
-  const [isSkillPopupOpen, setIsSkillPopupOpen] = useState(false);
-  const [isTechPopupOpen, setIsTechPopupOpen] = useState(false);
+interface Observation {
+  id: number;
+  title: string;
+  description: string;
+  date: string;
+}
 
-  // Adição: Estado e funções para o modal de observações
-  const [isObservationModalOpen, setIsObservationModalOpen] = useState(false);
-  const [observations, setObservations] = useState([
-    { id: 1, title: "Feedback Inicial", description: "Bom desempenho na primeira semana", date: "17/10/2024" },
-    { id: 2, title: "Revisão Técnica", description: "Precisa melhorar na organização do código", date: "18/10/2024" },
+interface SkillOrTech {
+  name: string;
+  color: string;
+}
+
+interface EstagiarioProps {
+  nome: string;
+  area: string;
+  squad: string;
+  imagem: string;
+}
+
+const Estagiario: React.FC<EstagiarioProps> = ({ nome, area, squad, imagem }) => {
+  const [softSkills, setSoftSkills] = useState<SkillOrTech[]>([]);
+  const [tecnologiasList, setTecnologiasList] = useState<SkillOrTech[]>([]);
+  const [novaSkill, setNovaSkill] = useState<string>("");
+  const [novaTecnologia, setNovaTecnologia] = useState<string>("");
+  const [isSkillPopupOpen, setIsSkillPopupOpen] = useState<boolean>(false);
+  const [isTechPopupOpen, setIsTechPopupOpen] = useState<boolean>(false);
+  const [isObservationModalOpen, setIsObservationModalOpen] = useState<boolean>(false);
+  const [observations, setObservations] = useState<Observation[]>([
+    {
+      id: 1,
+      title: "Feedback Inicial",
+      description: "Bom desempenho na primeira semana",
+      date: "17/10/2024",
+    },
+    {
+      id: 2,
+      title: "Revisão Técnica",
+      description: "Precisa melhorar na organização do código",
+      date: "18/10/2024",
+    },
   ]);
 
   const handleOpenObservationModal = () => setIsObservationModalOpen(true);
   const handleCloseObservationModal = () => setIsObservationModalOpen(false);
 
-  const handleDeleteObservation = (id) => {
+  const handleDeleteObservation = (id: number) => {
     setObservations(observations.filter((obs) => obs.id !== id));
   };
 
   const handleAddSkill = () => {
     if (novaSkill) {
-      const newSkill = {
+      const newSkill: SkillOrTech = {
         name: novaSkill,
         color: skill_colors[softSkills.length % skill_colors.length],
       };
@@ -46,7 +73,7 @@ const Estagiario = ({ nome, area, squad, imagem }) => {
 
   const handleAddTecnologia = () => {
     if (novaTecnologia) {
-      const newTech = {
+      const newTech: SkillOrTech = {
         name: novaTecnologia,
         color: tech_colors[tecnologiasList.length % tech_colors.length],
       };
@@ -56,11 +83,11 @@ const Estagiario = ({ nome, area, squad, imagem }) => {
     }
   };
 
-  const handleRemoveSkill = (index) => {
+  const handleRemoveSkill = (index: number) => {
     setSoftSkills(softSkills.filter((_, i) => i !== index));
   };
 
-  const handleRemoveTecnologia = (index) => {
+  const handleRemoveTecnologia = (index: number) => {
     setTecnologiasList(tecnologiasList.filter((_, i) => i !== index));
   };
 
@@ -138,7 +165,7 @@ const Estagiario = ({ nome, area, squad, imagem }) => {
         <PopUp
           titulo="Adicionar Soft Skill"
           valor={novaSkill}
-          onChange={(e) => setNovaSkill(e.target.value)}
+          onChange={(e: ChangeEvent<HTMLInputElement>) => setNovaSkill(e.target.value)}
           onAdd={handleAddSkill}
           onClose={() => setIsSkillPopupOpen(false)}
           placeholder="Digite a Soft Skill"
@@ -197,7 +224,7 @@ const Estagiario = ({ nome, area, squad, imagem }) => {
         <PopUp
           titulo="Adicionar Tecnologia"
           valor={novaTecnologia}
-          onChange={(e) => setNovaTecnologia(e.target.value)}
+          onChange={(e: ChangeEvent<HTMLInputElement>) => setNovaTecnologia(e.target.value)}
           onAdd={handleAddTecnologia}
           onClose={() => setIsTechPopupOpen(false)}
           placeholder="Digite a Tecnologia"
@@ -208,7 +235,7 @@ const Estagiario = ({ nome, area, squad, imagem }) => {
         <IconButton
           texto="OBSERVAÇÕES"
           Icone={AiOutlineFileText}
-          onClick={handleOpenObservationModal} // Abre o modal de observações
+          onClick={handleOpenObservationModal}
         />
         <IconButton
           texto="GERAR RELATÓRIO"
@@ -217,7 +244,6 @@ const Estagiario = ({ nome, area, squad, imagem }) => {
         />
       </div>
 
-      {/* Modal de Observações */}
       <ObservationModal
         open={isObservationModalOpen}
         onClose={handleCloseObservationModal}
