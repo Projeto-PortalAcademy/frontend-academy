@@ -3,9 +3,9 @@
 import React from "react";
 
 const CustomPieChart: React.FC = () => {
-  const size = 300;
-  const data = [80, 20];
-  const colors = ["#6CA0DC", "#D9534F"];
+  const size = 200; // Aumenta o tamanho desejado aqui
+  const data = [80, 20]; // Presença e Faltas
+  const colors = ['#6CA0DC', '#D9534F']; // Azul e Vermelho
 
   const circumference = 2 * Math.PI * 50;
   const offsets = data.map((value, index) =>
