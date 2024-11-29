@@ -21,7 +21,8 @@ const AttendanceTable: React.FC<AttendanceTableProps> = ({
   onAddComment, // Recebe a função onAddComment
 }) => {
   const [selectedDate, setSelectedDate] = useState(
-    new Date().toISOString().slice(0, 10)
+    new Date().toISOString().slice(0, 10),
+    new Date().toISOString().slice(0, 10),
   );
 
   const handleDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -32,7 +33,7 @@ const AttendanceTable: React.FC<AttendanceTableProps> = ({
     <div className="container mx-auto p-4">
       <div className="flex items-center mb-6 space-x-2">
         <div>
-          <span className="text-lg font-bold:">Registrar dia:</span>
+          <span className="text-lg font-bold mr-4">Registrar dia:</span>
           <input
             type="date"
             value={selectedDate}
@@ -61,21 +62,12 @@ const AttendanceTable: React.FC<AttendanceTableProps> = ({
                   onClick={() => onToggleStatus(student.id)}
                 />
               </td>
-              <td className="px-4 py-2 text-center flex justify-center items-center">
-                <IconButton
-                  style={{
-                    boxShadow: "",
-                    fontWeight: "regular",
-                  }}
-                  texto="Ver Histórico"
-                  Icone={FaHistory}
-                  onClick={() => alert(`Abrindo histórico de ${student.name}...`)}
-                />
-              </td>
+              <td className="px-4 py-2 text-center flex justify-center items-center"></td>
               <td className="px-4 py-2 items-center">
                 <IconButton
                   style={{
-                    boxShadow: "",
+                    backgroundColor: "transparent",
+                    boxShadow: "none",
                   }}
                   texto=""
                   Icone={FaCommentAlt}

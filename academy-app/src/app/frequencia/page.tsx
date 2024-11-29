@@ -1,7 +1,8 @@
-'use client'
+"use client";
 
 import React, { useState } from "react";
 import AttendanceTable from "@/components/PresenceTable/PresenceTable";
+import AddObservationModal from "@/components/AddObservationModal/AddObservationModal";
 
 interface Student {
   id: number;
@@ -11,10 +12,22 @@ interface Student {
 
 const Frequencia = () => {
   const [students, setStudents] = useState<Student[]>([
-    { id: 1, name: "João", status: "P" },
-    { id: 2, name: "Maria", status: "F" },
-    { id: 3, name: "Ana", status: "A" },
+    { id: 1, name: "Camila Yukari Yatabe", status: "P" },
+    { id: 2, name: "Vinicius de Morais Lino", status: "F" },
+    { id: 3, name: "Vinicius Antunes", status: "A" },
+    { id: 4, name: "Thiago Tavares Silva", status: "P" },
+    { id: 5, name: "Guilherme Martins", status: "F" },
+    { id: 6, name: "Matheus Pajé da Mata", status: "A" },
+    { id: 7, name: "Thiago Tavares Silva", status: "P" },
+    { id: 8, name: "Felipe Camargo", status: "F" },
+    { id: 9, name: "Sérgio Nascimento", status: "A" },
   ]);
+
+  const [isAddObservationModalOpen, setIsAddObservationModalOpen] =
+    useState(false);
+  const [selectedStudentId, setSelectedStudentId] = useState<number | null>(
+    null
+  );
 
   const toggleStatus = (id: number) => {
     setStudents((prevStudents) =>
@@ -35,7 +48,13 @@ const Frequencia = () => {
   };
 
   const handleAddComment = (id: number) => {
-    alert(`Adicionar comentário para o aluno com ID: ${id}`);
+    setSelectedStudentId(id); // Armazena o ID do aluno selecionado
+    setIsAddObservationModalOpen(true); // Abre o modal
+  };
+
+  const handleCloseAddObservationModal = () => {
+    setIsAddObservationModalOpen(false); // Fecha o modal
+    setSelectedStudentId(null); // Reseta o ID do aluno selecionado
   };
 
   return (
@@ -45,6 +64,10 @@ const Frequencia = () => {
         students={students}
         onToggleStatus={toggleStatus}
         onAddComment={handleAddComment}
+      />
+      <AddObservationModal
+        isOpen={isAddObservationModalOpen}
+        onClose={handleCloseAddObservationModal}
       />
     </div>
   );

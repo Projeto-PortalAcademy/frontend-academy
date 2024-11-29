@@ -1,21 +1,23 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
+import { useState } from "react";
 
 interface AddCommentsProps {
   onClose: () => void;
 }
 
 const AddComments: React.FC<AddCommentsProps> = ({ onClose }) => {
-  const [data, setData] = useState('');
-  const [titulo, setTitulo] = useState('');
-  const [descricao, setDescricao] = useState('');
+  const [data, setData] = useState("");
+  const [titulo, setTitulo] = useState("");
+  const [descricao, setDescricao] = useState("");
 
   const handleClose = () => {
     onClose();
   };
 
-  const handleClickOutside = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+  const handleClickOutside = (
+    e: React.MouseEvent<HTMLDivElement, MouseEvent>,
+  ) => {
     if (e.target === e.currentTarget) {
       handleClose();
     }
@@ -35,7 +37,9 @@ const AddComments: React.FC<AddCommentsProps> = ({ onClose }) => {
         {/* Cabeçalho azul */}
         <div className="relative">
           <div className="bg-blue-800 text-white px-4 py-6 rounded-t-lg">
-            <h2 className="text-center text-lg font-semibold">Adicionar observação</h2>
+            <h2 className="text-center text-lg font-semibold">
+              Adicionar observação
+            </h2>
           </div>
           {/* Botão Fechar */}
           <button
@@ -50,7 +54,10 @@ const AddComments: React.FC<AddCommentsProps> = ({ onClose }) => {
         <div className="p-4">
           {/* Campo de Data */}
           <div className="mb-4">
-            <label htmlFor="data" className="block text-sm font-medium text-gray-700">
+            <label
+              htmlFor="data"
+              className="block text-sm font-medium text-gray-700"
+            >
               Data:
             </label>
             <input
@@ -64,7 +71,10 @@ const AddComments: React.FC<AddCommentsProps> = ({ onClose }) => {
 
           {/* Campo de Título */}
           <div className="mb-4">
-            <label htmlFor="titulo" className="block text-sm font-medium text-gray-700">
+            <label
+              htmlFor="titulo"
+              className="block text-sm font-medium text-gray-700"
+            >
               Título:
             </label>
             <input
@@ -79,7 +89,10 @@ const AddComments: React.FC<AddCommentsProps> = ({ onClose }) => {
 
           {/* Campo de Descrição */}
           <div className="mb-6">
-            <label htmlFor="descricao" className="block text-sm font-medium text-gray-700">
+            <label
+              htmlFor="descricao"
+              className="block text-sm font-medium text-gray-700"
+            >
               Descrição:
             </label>
             <textarea

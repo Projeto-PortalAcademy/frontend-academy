@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 
-type Status = "P" | "A" | "F"; 
+type Status = "P" | "A" | "F";
 export default function Presence() {
   const [status, setStatus] = useState<Status>("P");
 
@@ -16,7 +16,6 @@ export default function Presence() {
       status === "P" ? "A" : status === "A" ? "F" : "P";
     setStatus(nextStatus);
   };
-
 
   return (
     <div

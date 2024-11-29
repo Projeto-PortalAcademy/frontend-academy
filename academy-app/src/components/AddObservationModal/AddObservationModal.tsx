@@ -4,7 +4,11 @@ import { Modal, Box, Typography, Button, TextField } from "@mui/material";
 interface AddObservationModalProps {
   isOpen: boolean;
   onClose: () => void;
-  onAddObservation: (observation: { title: string; description: string; date: string }) => void;
+  onAddObservation: (observation: {
+    title: string;
+    description: string;
+    date: string;
+  }) => void;
 }
 
 const AddObservationModal: React.FC<AddObservationModalProps> = ({
