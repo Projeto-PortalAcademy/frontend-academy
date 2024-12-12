@@ -43,8 +43,7 @@ Foi desenvolvido um teste automatizado utilizando Selenium WebDriver para verifi
 3. Instale as dependências:
    ```bash
    pip install -r requirements.txt
-   pip install selenium
-   pip install webdriver-manager
+   pip install selenium webdriver-manager
    ```
 
 ### **Como Rodar o Teste:**
@@ -84,12 +83,3 @@ Foi desenvolvido um teste automatizado utilizando Selenium WebDriver para verifi
 ### **Mecanismos de Validação:**
 - Uso de `WebDriverWait` para garantir o carregamento completo das páginas.
 - Confirmação de elementos presentes nas páginas.
-
-## **4. Autor(es)**
-
-- Nome do Autor Principal: **[Seu Nome]**
-- Contribuidores: **[Outros Nomes, se aplicável]**
-
-## **5. Link do Vídeo**
-
-[Link para o Vídeo de Demonstração (se disponível)](#)
